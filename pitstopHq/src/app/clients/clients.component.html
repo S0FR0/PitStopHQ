@@ -1,0 +1,41 @@
+<h1>Clients</h1>
+
+<button class="btn btn-client" (click)="openAddModal()">New Client</button>
+
+<div class="container">
+  <div class="cell" *ngFor="let client of clients">
+    <div class="client-data">
+      <div class="left" (click)="goToClient(client.id)">
+        <h2>{{ client.firstName }} {{ client.lastName }}</h2>
+        <p>Phone numbers: {{ client.phone }} {{ client.secondaryPhone }}</p>
+        <p>Email: {{ client.email }}</p>
+        <p>Vehicles: {{ client.vehicleCount }}</p>
+    </div>
+    <div class="right">
+      <button class="btn btn-edit" (click)="openEditModal(client.id)">
+        <mat-icon class="icon-edit">edit</mat-icon>
+      </button>
+    </div>
+    </div>
+  </div>
+
+  <div class="no-clients" *ngIf="clients.length === 0">
+    <p>There are no clients. Add your first client.</p>
+  </div>
+</div>
+
+<div class="background" *ngIf="showAddModal || showEditModal" (click)="closeModal()"></div>
+<app-add-client-modal
+      [ngClass]="{'visible-modal': showAddModal}"
+      [show]="showAddModal" 
+      (close)="closeModal()" 
+      (saveClient)="onSaveNewClient()">
+    </app-add-client-modal>
+    <app-edit-client-modal
+      [ngClass]="{'visible-modal': showEditModal}"
+      [show]="showEditModal"
+      [clientId]="selectedClientId"
+      (close)="closeModal()"
+      (clientUpdated)="onClientUpdated($event)"
+    >
+    </app-edit-client-modal>

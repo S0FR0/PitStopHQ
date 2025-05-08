@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="first-three">
+        <div class="clients container">
+            <h3 class="clients-title title">Clients:</h3>
+            <h1 class="clients-count">{{ clients.length }}</h1>
+            <h4 *ngIf="showData" class="clients-status"><span class="active">Active</span> {{ activeClients }}</h4>
+            <h4 *ngIf="showData" class="clients-status"><span class="inactive">Inactive</span> {{ inactiveClients }}</h4>
+        </div>
+
+        <div class="vehicles container">
+            <h3 class="vehicles-title title">Vehicles:</h3>
+            <h1 class="vehicles-count">{{ vehicles.length }}</h1>
+        </div>
+
+        <div class="revenues container">
+            <h3 class="revenues-title title">Revenues:</h3>
+            <h1 class="revenues-count">$ {{ revenues }}</h1>
+        </div>
+    </div>
+
+    <div class="reservation container">
+        <h3 class="reservation-title title">Next reservation: </h3>
+
+        <div class="next-reservation" *ngIf="sortedReservations.length > 0" (click)="goToReservation(sortedReservations[0].id)">
+            <h4 class="reservation-title">{{sortedReservations[0].title}}</h4>
+            <h5 class="reservation-contact">{{sortedReservations[0].clientName}} - {{sortedReservations[0].contactMethod}}</h5>
+            <p class="reservation-time">{{ sortedReservations[0].time }}</p>
+        </div>
+        <div class="no-reservations" *ngIf="sortedReservations?.length === 0">
+            <p>There are no reservations left for today.</p>
+        </div>
+    </div>
+</div>
+
+<input 
+    #searchInput
+    class="search-client" 
+    type="text" 
+    placeholder="Search client..." 
+    (input)="searchClients(searchInput.value)" 
+    [value]="searchTerm">
+
+<div *ngIf="!showDiv" class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Secondary</th>
+                <th>Vehicles</th>
+                <th>Registration date</th>
+                <th>Actity Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of filteredClients" class="client-row">
+                <td class="table-client-name" (click)="goToClient(client.id)">{{ client.firstName }} {{client.lastName}}</td>
+                <td class="table-client-email" (click)="goToClient(client.id)">{{ client.email }}</td>
+                <td (click)="goToClient(client.id)">{{ client.phone }}</td>
+                <td (click)="goToClient(client.id)">{{ client.secondaryPhone || '-'}}</td>
+                <td (click)="goToClient(client.id)">{{ client.vehicleCount }}</td>
+                <td (click)="goToClient(client.id)">{{ client.date | date:'dd.MM.yyyy' }}</td>
+                <td>
+                    <button class="btn btn-toggle" 
+                        [class.btn-active]="client.isActive" 
+                        [class.btn-inactive]="!client.isActive"
+                        (click)="toggleClientStatus($event, client)">
+                        {{ client.isActive ? 'Active' : 'Inactive' }}
+                    </button>
+                </td>
+            </tr>
+            <tr *ngIf="filteredClients?.length === 0">
+                <td colspan="7" class="no-results">
+                    {{ searchTerm ? 'No clients found matching "' + searchTerm + '"' : 'No clients available' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="showDiv" class="container-small">
+    <div class="cell" *ngFor="let client of filteredClients">
+        <div class="client-data">
+        <div class="left" (click)="goToClient(client.id)">
+            <h2>{{ client.firstName }} {{ client.lastName }}</h2>
+            <p>Phone numbers: {{ client.phone }} {{ client.secondaryPhone }}</p>
+            <p>Email: {{ client.email }}</p>
+            <p>Vehicles: {{ client.vehicleCount }}</p>
+        </div>
+        <div class="right">
+            <button class="btn btn-toggle" 
+            [class.btn-active]="client.isActive" 
+            [class.btn-inactive]="!client.isActive"
+            (click)="toggleClientStatus($event, client)">
+            {{ client.isActive ? 'Active' : 'Inactive' }}
+        </button>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="filteredClients?.length === 0">
+        <p class="no-results">
+            {{ searchTerm ? 'No clients found matching "' + searchTerm + '"' : 'No clients available' }}
+        </p>
+    </div>
+    
+    <div class="no-clients" *ngIf="clients.length === 0">
+        <p>There are no clients. Add your first client.</p>
+    </div>
+</div>

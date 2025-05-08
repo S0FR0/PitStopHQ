@@ -1,0 +1,250 @@
+<div class="form-container">
+    <div class="form-body">
+        <form [formGroup]="form">
+            <div formGroupName="vehicleCondition">
+                <div class="form-group">
+                    <div class="checkbox-row">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            id="isDamaged" 
+                            formControlName="isDamaged"
+                        >
+                        <label class="form-check-label" for="isDamaged">
+                            Damaged
+                        </label>
+                    </div>
+                    <label for="damageDescription">Description</label>
+                    <textarea 
+                        class="form-control" 
+                        id="damageDescription" 
+                        formControlName="damageDescription"
+                        rows="2"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-row">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            id="isScratched" 
+                            formControlName="isScratched"
+                        >
+                        <label class="form-check-label" for="isScratched">
+                            Scratched
+                        </label>
+                    </div>
+                    <label for="scratchDescription">Description</label>
+                    <textarea 
+                        class="form-control" 
+                        id="scratchDescription" 
+                        formControlName="scratchDescription"
+                        rows="2"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-row">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            id="hasMechanicalIssues" 
+                            formControlName="hasMechanicalIssues"
+                        >
+                        <label class="form-check-label" for="hasMechanicalIssues">
+                            Mechanical issues
+                        </label>
+                    </div>
+                    <label for="mechanicalIssuesDescription">Notes</label>
+                    <textarea 
+                        class="form-control" 
+                        id="mechanicalIssuesDescription" 
+                        formControlName="mechanicalIssuesDescription"
+                        rows="2"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-row">
+                        <input 
+                            class="form-check-input" 
+                            type="checkbox" 
+                            id="hasElectricalIssues" 
+                            formControlName="hasElectricalIssues"
+                        >
+                        <label class="form-check-label" for="hasElectricalIssues">
+                            Electrical issues
+                        </label>
+                    </div>
+                    <label for="electricalIssuesDescription">Notes</label>
+                    <textarea 
+                        class="form-control" 
+                        id="electricalIssuesDescription" 
+                        formControlName="electricalIssuesDescription"
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="serviceType">Service type*</label>
+                <select 
+                    id="serviceType" 
+                    class="form-control"
+                    formControlName="serviceType"
+                >
+                    <option value="">-- Select service type --</option>
+                    <option *ngFor="let type of serviceTypes" [value]="type">
+                        {{ type }}
+                    </option>
+                </select>
+                <div *ngIf="submitted && formControls['serviceType']?.errors" class="invalid">
+                    <div *ngIf="formControls['serviceType']?.errors?.['required']">Service type is mandatory</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Duration (minutes)*</label>
+                <select 
+                    id="duration" 
+                    class="form-control"
+                    formControlName="duration"
+                >
+                    <option value="">-- Select duration --</option>
+                    <option *ngFor="let time of timeOptions" [value]="time">
+                        {{ time }}
+                    </option>
+                </select>
+                <div *ngIf="submitted && formControls['duration']?.errors" class="invalid">
+                    <div *ngIf="formControls['duration']?.errors?.['required']">Duration is mandatory</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description*</label>
+                <textarea 
+                    class="form-control" 
+                    id="description" 
+                    formControlName="description"
+                    rows="2"
+                ></textarea>
+                <div *ngIf="submitted && formControls['description']?.errors" class="invalid">
+                    <div *ngIf="formControls['description']?.errors?.['required']">Description is mandatory</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mechanic">Mechanic*</label>
+                <select 
+                    id="mechanic" 
+                    class="form-control"
+                    formControlName="mechanic"
+                >
+                    <option value="">-- Select mechanic --</option>
+                    <option *ngFor="let mechanic of mechanics" [value]="mechanic">
+                        {{ mechanic }}
+                    </option>
+                </select>
+                <div *ngIf="submitted && formControls['mechanic']?.errors" class="invalid">
+                    <div *ngIf="formControls['mechanic']?.errors?.['required']">Mechanic is mandatory</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="currentKm">Mileage*</label>
+                <input 
+                    type="number" 
+                    class="form-control" 
+                    id="currentKm" 
+                    formControlName="currentKm"
+                >
+                <div *ngIf="submitted && formControls['currentKm']?.errors" class="invalid">
+                    <div *ngIf="formControls['currentKm']?.errors?.['required']">Mileage is mandatory</div>
+                    <div *ngIf="formControls['currentKm']?.errors?.['min']">Mileage must be positive</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea 
+                    class="form-control" 
+                    id="notes" 
+                    formControlName="notes"
+                    rows="2"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-row">
+                    <input 
+                        class="form-check-input" 
+                        type="checkbox" 
+                        id="useParts" 
+                        formControlName="useParts"
+                    >
+                    <label class="form-check-label" for="useParts">
+                        <strong>Changed parts</strong>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="parts-section" *ngIf="form.get('useParts')?.value">
+                <h6 class="section-title">Replaced Parts</h6>
+                <div formArrayName="replacedParts">
+                    <div *ngFor="let partForm of partsArray.controls; let i = index" [formGroupName]="i" class="part-row">
+                        <div class="part-inputs">
+                            <div class="part-input">
+                                <label [for]="'partId-' + i" class="form-label">Part</label>
+                                <select 
+                                    [id]="'partId-' + i" 
+                                    class="form-control"
+                                    formControlName="partId"
+                                >
+                                    <option value="">Select a part</option>
+                                    <option *ngFor="let item of getAvailablePartsForRow(i)" [value]="item.id">
+                                        {{ item.name }} - $ {{ item.price }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="part-input">
+                                <label [for]="'quantity-' + i" class="form-label">Quantity</label>
+                                <input 
+                                    type="number" 
+                                    class="form-control" 
+                                    [id]="'quantity-' + i" 
+                                    formControlName="quantity"
+                                    min="1"
+                                >
+                                <div *ngIf="submitted && partForm.get('quantity')?.errors" class="invalid">
+                                    <div *ngIf="partForm.get('quantity')?.errors?.['min']">Quantity must be at least one</div>
+                                </div>
+                            </div>
+
+                            <button 
+                                *ngIf="partForm.get('partId')?.value" 
+                                type="button" 
+                                class="btn btn-delete" 
+                                (click)="removePart(i)"
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="form-footer">
+        <div class="total-price">
+            <strong>Total: $ {{ calculateTotalWithBasePrice() }}</strong>
+            <div class="price-note">Includes service fee</div>
+        </div>
+        <div class="action-buttons">
+            <button type="button" class="btn btn-create" (click)="onSubmit()" [disabled]="isLoading">
+                {{ detailsExist ? 'Update' : 'Create' }}
+            </button>
+        </div>
+    </div>
+</div>

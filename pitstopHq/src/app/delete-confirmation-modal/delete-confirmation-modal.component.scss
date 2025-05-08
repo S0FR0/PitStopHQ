@@ -1,0 +1,54 @@
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
+
+.modal {
+  background-color: white;
+  height: 250px;
+  width: 500px;
+  max-width: 550px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.body {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 70%;
+}
+
+.btn {
+    border: 0px;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.btn-confirm{
+    color: $inactive;
+    border: 1px solid $inactive;
+  }
+
+.btn-confirm:hover{
+    background-color: $inactive-background;
+    color: $inactive;
+    border: 1px solid $inactive;
+  }
+
+@media (max-width: 1560px) {
+  .modal {
+    width: 4500x;
+  }
+}

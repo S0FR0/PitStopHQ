@@ -1,0 +1,95 @@
+<div class="modal" [class.show]="show" [style.display]="show ? 'block' : 'none'">
+    <div class="modal-content">
+        <div>
+            <div class="modal-header">
+                <h5 class="modal-title">Add part</h5>
+                <button type="button" class="btn btn-close" (click)="closeModal()">x</button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="partForm">
+
+                    <div class="input-row">
+                        <div class="input-container">
+                            <div class="input">
+                                <label for="name" class="form-label">Name*</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    formControlName="name"
+                                    [ngClass]="{'is-invalid': submitted && pf['name'].errors}"
+                                >
+                            </div>
+                            <div *ngIf="submitted && pf['name']?.errors" class="invalid">
+                                <div *ngIf="pf['name']?.errors?.['required']">Name is mandatory</div>
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div class="input">
+                                <label for="partNumber" class="form-label">Part number*</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="partNumber"
+                                    formControlName="partNumber"
+                                    [ngClass]="{'is-invalid': submitted && pf['partNumber'].errors}"
+                                >
+                            </div>
+                            <div *ngIf="submitted && pf['partNumber']?.errors" class="invalid">
+                                <div *ngIf="pf['partNumber']?.errors?.['required']">Part number is mandatory</div>
+                                <div *ngIf="pf['partNumber']?.errors?.['pattern']">Part number must contain only uppercase letters and numbers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-container">
+                            <div class="input">
+                                <label for="price" class="form-label">Price*</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="price"
+                                    formControlName="price"
+                                    [ngClass]="{'is-invalid': submitted && pf['price'].errors}"
+                                >
+                            </div>
+                            <div *ngIf="submitted && pf['price']?.errors" class="invalid">
+                                <div *ngIf="pf['price']?.errors?.['required']">Price is mandatory</div>
+                                <div *ngIf="pf['price']?.errors?.['pattern']">Price must contain only numbers</div>
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div class="input">
+                                <label for="stockQuantity" class="form-label">Stock Quantity*</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="stockQuantity"
+                                    formControlName="stockQuantity"
+                                    [ngClass]="{'is-invalid': submitted && pf['stockQuantity'].errors}"
+                                >
+                            </div>
+                            <div *ngIf="submitted && pf['stockQuantity']?.errors" class="invalid">
+                                <div *ngIf="pf['stockQuantity']?.errors?.['required']">Stock quantity is mandatory</div>
+                                <div *ngIf="pf['stockQuantity']?.errors?.['pattern']">Stock quantity must contain only numbers</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                <button type="button" class="btn btn-success" (click)="onSubmit()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop fade show" *ngIf="show"></div>
+</div>

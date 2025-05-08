@@ -1,0 +1,304 @@
+{
+  "clients": [
+    {
+      "firstName": "Marian",
+      "lastName": "Ionescu",
+      "phone": "0742123456",
+      "secondaryPhone": "0742123457",
+      "email": "maria.ionescu@example.com",
+      "isActive": true,
+      "date": "2025-05-04T17:42:34.807Z",
+      "vehicleCount": 1,
+      "id": "7b16836f-5ccd-4786-9fc6-07add616c497"
+    },
+    {
+      "id": "eced15fe-273e-4792-b585-24e1d2ee82e1",
+      "firstName": "Elena",
+      "lastName": "Dumitru",
+      "phone": "0744123456",
+      "secondaryPhone": null,
+      "email": "elena.d@example.com",
+      "isActive": true,
+      "date": "2025-05-04T17:46:35.395Z",
+      "vehicleCount": 0
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "2e61b034-b684-41e1-9d90-0168420afffb",
+      "make": "Opel",
+      "model": "Astra",
+      "year": 2019,
+      "licensePlate": "B-789-GHI",
+      "chassisNumber": "W0L0XEP68J3123456",
+      "engineType": "Diesel",
+      "engineCapacity": 1598,
+      "horsePower": 136,
+      "kwPower": 100,
+      "km": 95000,
+      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497"
+    },
+    {
+      "id": "6f2a3097-3a55-4996-b1a4-c849c122015d",
+      "make": "Skoda",
+      "model": "Octavia",
+      "year": 2019,
+      "licensePlate": "B-404-STU",
+      "chassisNumber": "TMBJJ7NE7G0123456",
+      "engineType": "Diesel",
+      "engineCapacity": 1968,
+      "horsePower": 150,
+      "kwPower": 110,
+      "km": 85000,
+      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1"
+    },
+    {
+      "id": "a91d4870-4a74-444d-9687-2dd63f55fe57",
+      "make": "Volkswagen",
+      "model": "Tiguan",
+      "year": 2021,
+      "licensePlate": "B-505-VWX",
+      "chassisNumber": "WVWZZZ6RZJE123456",
+      "engineType": "Gas",
+      "engineCapacity": 1984,
+      "horsePower": 190,
+      "kwPower": 140,
+      "km": 60000,
+      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1"
+    },
+    {
+      "id": "4f4c161b-6045-4e57-b7b0-cda14a23c59e",
+      "make": "BMW",
+      "model": "CClass",
+      "year": 2002,
+      "licensePlate": "IS-22-ELN",
+      "chassisNumber": "TMBJJ7NE8K0123456",
+      "engineType": "Gas",
+      "engineCapacity": 1980,
+      "horsePower": 150,
+      "kwPower": 110,
+      "km": 60000,
+      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497"
+    }
+  ],
+  "reservations": [
+    {
+      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1",
+      "vehicleId": "a91d4870-4a74-444d-9687-2dd63f55fe57",
+      "title": "Windshild Replacement",
+      "contactMethod": "elena.d@example.com",
+      "date": "2025-05-05",
+      "time": "23:00",
+      "id": "27c29da8-27de-4197-a734-5d33b32833c7"
+    },
+    {
+      "id": "528a72a6-d153-4792-a3e8-6902d7a7668a",
+      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1",
+      "vehicleId": "a91d4870-4a74-444d-9687-2dd63f55fe57",
+      "title": "Annual Maintenance",
+      "contactMethod": "0744123456",
+      "date": "2025-05-15",
+      "time": "15:00"
+    },
+    {
+      "id": "ad9d4cd4-d83b-4443-b72d-b3eba55e662a",
+      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497",
+      "vehicleId": "2e61b034-b684-41e1-9d90-0168420afffb",
+      "title": "Carsfds",
+      "contactMethod": "maria.ionescu@example.com",
+      "date": "2025-05-06",
+      "time": "09:00"
+    },
+    {
+      "id": "3719be1c-aa59-44a3-8148-449887cedb1a",
+      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497",
+      "vehicleId": "2e61b034-b684-41e1-9d90-0168420afffb",
+      "title": "Zardsyr",
+      "contactMethod": "maria.ionescu@example.com",
+      "date": "2025-05-07",
+      "time": "11:30"
+    }
+  ],
+  "reservation-details": [
+    {
+      "id": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
+      "reservationId": "27c29da8-27de-4197-a734-5d33b32833c7",
+      "serviceType": "Parts replacement",
+      "description": "kljh",
+      "cost": 400,
+      "duration": "30",
+      "mechanic": "Employee3",
+      "notes": "",
+      "partsNeeded": "",
+      "currentKm": 60000,
+      "vehicleConditionId": "4f6fa350-02ef-4d61-a137-3014c06908cf"
+    },
+    {
+      "id": "7faacdd7-968d-41c1-8a6f-05fc8b6dbf2b",
+      "reservationId": "528a72a6-d153-4792-a3e8-6902d7a7668a",
+      "serviceType": "Parts replacement",
+      "description": "SDFSDF",
+      "cost": 50,
+      "duration": "70",
+      "mechanic": "Employee2",
+      "notes": "HJFGH",
+      "partsNeeded": "",
+      "currentKm": 600000,
+      "vehicleConditionId": "d64eed43-21d3-45d5-aabc-d589bd862a26"
+    }
+  ],
+  "replaced-parts": [
+    {
+      "id": "8c210fac-001f-4978-b74a-170bca80001d",
+      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
+      "partId": "ca68da61-99d4-4348-b004-9b122a7ca068",
+      "quantity": 1
+    },
+    {
+      "id": "a7f00d1f-bd18-4b7c-870f-1e199b0252c1",
+      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
+      "partId": "970c2f54-a254-4d62-8570-293505074e2d",
+      "quantity": 1
+    }
+  ],
+  "vehicle-conditions": [
+    {
+      "id": "4f6fa350-02ef-4d61-a137-3014c06908cf",
+      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
+      "isDamaged": true,
+      "damageDescription": "",
+      "isScratched": false,
+      "scratchDescription": "",
+      "hasMechanicalIssues": false,
+      "mechanicalIssuesDescription": "",
+      "hasElectricalIssues": false,
+      "electricalIssuesDescription": ""
+    },
+    {
+      "id": "d64eed43-21d3-45d5-aabc-d589bd862a26",
+      "reservationDetailsId": "7faacdd7-968d-41c1-8a6f-05fc8b6dbf2b",
+      "isDamaged": true,
+      "damageDescription": "SDFS",
+      "isScratched": false,
+      "scratchDescription": "",
+      "hasMechanicalIssues": false,
+      "mechanicalIssuesDescription": "",
+      "hasElectricalIssues": false,
+      "electricalIssuesDescription": "SDFS"
+    }
+  ],
+  "parts": [
+    {
+      "id": "54566fe5-9d3e-4952-8ad3-8caa51c346e2",
+      "name": "Water Pump",
+      "partNumber": "11517632426",
+      "price": 450,
+      "stockQuantity": 3
+    },
+    {
+      "id": "c8216d27-711d-4bd0-bc96-fec736c3a4da",
+      "name": "Battery 12V 72Ah",
+      "partNumber": "000915105DE",
+      "price": 580,
+      "stockQuantity": 4
+    },
+    {
+      "id": "bfae6e8b-a8cd-48c7-9f66-30b433ea0874",
+      "name": "VW Oil Filter",
+      "partNumber": "06L115562B",
+      "price": 45,
+      "stockQuantity": 15
+    },
+    {
+      "id": "970c2f54-a254-4d62-8570-293505074e2d",
+      "name": "VW Air Filter",
+      "partNumber": "5Q0129620D",
+      "price": 65,
+      "stockQuantity": 12
+    },
+    {
+      "id": "6ab25b4c-031e-4930-8567-79126e8ffdcd",
+      "name": "Engine Oil 5W30",
+      "partNumber": "10024589",
+      "price": 55,
+      "stockQuantity": 30
+    },
+    {
+      "id": "ca68da61-99d4-4348-b004-9b122a7ca068",
+      "name": "Audi Rear Shock Absorber",
+      "partNumber": "8K0513036E",
+      "price": 285,
+      "stockQuantity": 4
+    },
+    {
+      "id": "350d1f12-fe7a-4984-b530-f8aa65d483ab",
+      "name": "VW Front Brake Pads",
+      "partNumber": "5Q0698151D",
+      "price": 180,
+      "stockQuantity": 8
+    },
+    {
+      "id": "396e7505-e03b-4859-9950-b7e66bc3b375",
+      "name": "BMW Thermostat",
+      "partNumber": "11537544788",
+      "price": 120,
+      "stockQuantity": 5
+    },
+    {
+      "id": "7dc6a1c3-88c4-494e-8b01-92bfdb8f011a",
+      "name": "Audi Suspension Bushings",
+      "partNumber": "8K0407181C",
+      "price": 95,
+      "stockQuantity": 10
+    },
+    {
+      "id": "c8148378-1cd8-41a0-8529-b3b54d469dfc",
+      "name": "VW Rear Brake Pads",
+      "partNumber": "5Q0698451A",
+      "price": 150,
+      "stockQuantity": 7
+    },
+    {
+      "id": "8ad80b46-7a04-450a-847d-a648cfe39e45",
+      "name": "Cabin Filter",
+      "partNumber": "5Q0819644A",
+      "price": 75,
+      "stockQuantity": 20
+    },
+    {
+      "id": "6a159dbf-bac5-4388-a8a2-c3bd37c93062",
+      "name": "VW Tiguan Windshield",
+      "partNumber": "5NA845011D",
+      "price": 850,
+      "stockQuantity": 2
+    },
+    {
+      "id": "e21d2a9b-e549-4653-a20e-9631f0f41ce6",
+      "name": "Transmission Repair Kit",
+      "partNumber": "0B5398048C",
+      "price": 620,
+      "stockQuantity": 1
+    },
+    {
+      "id": "98072046-20f2-42fa-a7d1-9c3c9d42b0d4",
+      "name": "Transmission Fluid",
+      "partNumber": "G052182A2",
+      "price": 85,
+      "stockQuantity": 8
+    },
+    {
+      "id": "6d82c50f-f0ac-4b14-9dce-2651340835e6",
+      "name": "Transmission Gaskets",
+      "partNumber": "0B5398009A",
+      "price": 125,
+      "stockQuantity": 3
+    },
+    {
+      "id": "ceb67afa-23a0-45e6-b332-3309605f45a8",
+      "name": "Wiper Blades Set",
+      "partNumber": "5G0998002",
+      "price": 95,
+      "stockQuantity": 15
+    }
+  ]
+}

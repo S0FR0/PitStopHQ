@@ -1,0 +1,48 @@
+<button class="btn btn-back" (click)="goBack()">Back</button>
+
+<div class="container">
+  <div class="container-client">
+    <h2>{{ vehicle.make }} {{ vehicle.model }}</h2>
+    <p class="data">License plate: {{ vehicle.licensePlate }}</p>
+    <p class="data">Year: {{ vehicle.year }}</p>
+    <p class="data">Km: {{ vehicle.km }} | Horse power: {{ vehicle.horsePower }}</p>
+    <div class="btns-client">
+      <button class="btn btn-edit" (click)="openEditModal()"><mat-icon class="icon-edit">edit</mat-icon></button>
+      <button class="btn btn-delete" (click)="confirmDeleteVehicle()">Delete</button>
+    </div>
+  </div>
+
+  <div class="container-vehicles">
+    <div class="cell" *ngFor="let reservation of reservationDetails">
+      <div class="vehicle-data">
+        <div class="left">
+          <h2>{{ reservation.reservationTitle }}</h2>
+          <p>Cost: $ {{ reservation.cost }}</p>
+          <p>Date: {{reservation.reservationDate | date: 'dd.MM.yyyy'}}</p>
+      </div>
+      </div>
+    </div>
+  
+    <div class="no-vehicle" *ngIf="reservationDetails.length === 0">
+      <p>There are no reservations.</p>
+    </div>
+  </div>
+</div>
+
+<div class="background" *ngIf="showEditVehicleModal || showDeleteModal" (click)="closeModal()"></div>
+<app-edit-vehicle-modal
+[ngClass]="{'visible-modal': showEditVehicleModal}"
+  [show]="showEditVehicleModal"
+  [vehicleId]="vehicle.id"
+  (close)="closeEditModal()"
+  (vehicleUpdated)="onVehicleUpdated($event)">
+</app-edit-vehicle-modal>
+
+<app-delete-confirmation-modal
+  [ngClass]="{'visible-delete-modal': showDeleteModal}"
+  [show]="showDeleteModal"
+  title="Delete Vehicle"
+  message="Are you sure you want to delete this vehicle?"
+  (confirm)="deleteVehicle()"
+  (cancel)="cancelDeleteVehicle()">
+</app-delete-confirmation-modal>

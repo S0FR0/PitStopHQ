@@ -1,0 +1,372 @@
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
+
+.row {
+  display: flex;
+  gap: 5vw;
+  align-items: center;
+}
+
+.first-three {
+  display: flex;
+  gap: 5vw;
+}
+
+.container {
+  padding: 10px;
+  padding-left: 20px;
+  background-color: $background-color;
+  border-radius: 10px;
+  height: 150px;
+  border: 1px solid lightgray;
+}
+
+.clients {
+  width: 150px;
+
+  .clients-count {
+    padding-left: 10px;
+    margin: 2px;
+  }
+  
+  .clients-status{
+    font-size: small;
+  }
+
+  .active{
+    color: $active;
+    background-color: $active-background;
+    padding: 6px;
+    border-radius: 5px;
+  }
+
+  .inactive{
+    color: $inactive;
+    background-color: $inactive-background;
+    padding: 6px;
+    border-radius: 5px;
+  }  
+}
+
+.title {
+  margin: 0px;
+}
+
+.reservation {
+  width: 300px;
+  padding-right: 20px;
+  
+  .next-reservation {
+    padding: 10px;
+    padding-top: 3px;
+    cursor: pointer;
+  }
+
+  .next-reservation:hover {
+    background-color: $background-hover;
+    border-radius: 10px;
+  }
+
+  .reservation-title {
+    margin-bottom: 7px;
+  }
+
+  .reservation-contact {
+    margin: 0px;
+  }
+
+  .reservation-time{
+    margin-top: 2px;
+  }
+}
+
+.revenues {
+  width: 150px;
+
+  .revenues-count {
+    padding-left: 10px;
+    margin: 2px;
+  }
+}
+
+.vehicles{
+  width: 150px;
+  
+  .vehicles-count {
+    padding-left: 10px;
+    margin: 2px;
+  }
+}
+
+.search-client {
+  margin-top: 10vh;
+  padding: 10px;
+  background-color: $background-color;
+  width: 500px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+
+.sorting {
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.btn {
+  background-color:  $background-color;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 30px;
+}
+
+/* Style for the table */
+.table-container {
+  width: 90%;
+  height: 50vh; /* Fixed height - adjust as needed */
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  overflow: hidden; /* Hide overflow at container level */
+}
+
+/* Basic table styling */
+.table-container {
+  width: 90%;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 59vh;
+}
+
+/* Base table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  max-height: 60vh;
+}
+
+/* Cell styling */
+th, td {
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+/* Prevent text truncation in cells */
+td {
+  white-space: nowrap; /* Keep text on one line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+  align-self: cent;
+  cursor: pointer;
+}
+
+.table-client-name, .table-client-email {
+  text-align: start;
+}
+
+tbody {
+  display: block;
+  max-height: 57vh;
+  overflow-y: auto;
+}
+
+/* Force table rows to be table display type */
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Account for scrollbar width in header */
+thead {
+  width: calc(100% - 17px);
+}
+
+/* Column width distribution */
+th:nth-child(1), td:nth-child(1) { width: 15%; } /* Name */
+th:nth-child(2), td:nth-child(2) { width: 20%; } /* Email */
+th:nth-child(3), td:nth-child(3) { width: 15%; } /* PhoneNumber */
+th:nth-child(4), td:nth-child(4) { width: 15%; } /* Secondary */
+th:nth-child(5), td:nth-child(5) { width: 8%; } /* Vehicles */
+th:nth-child(6), td:nth-child(6) { width: 15%; } /* Registration date */
+th:nth-child(7), td:nth-child(7) { width: 12%; } /* Activity Status */
+
+/* Optional: add a little more padding for better readability */
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: bold;
+}
+
+.client-row:hover {
+  background-color: $background-hover;
+}
+
+.btn-toggle {
+  border: 0px;
+  cursor: pointer;
+}
+
+.btn-active {
+  background-color: $active-background;
+  color: $active;
+}
+
+.btn-inactive {
+  background-color: $inactive-background;
+  color: $inactive;
+}
+
+.container-small {
+  height: 400px;
+  width: 70vw;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  overflow-y: auto;
+  margin-right: 10%;
+}
+
+.client-data {
+  padding: 10px 0px;
+  padding-left: 3%;
+  display: flex;
+
+  .left {
+    width: 80%;
+    cursor: pointer;
+  }
+
+  .right {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .btn {
+      width: 60px;
+      height: 40px;
+    }
+
+    .btn-edit{
+      background-color: palegoldenrod;
+      border: 1px solid gold;
+    }
+
+    .btn-delete{
+      background-color: $inactive-background;
+      color: $inactive;
+      border: 1px solid $inactive;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .row {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .search-client {
+    margin-top: 20px;
+  }
+  .container-small {
+    height: 42vh;
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 860px) {
+  .first-three{
+    margin-right: 10vw;
+    gap: 3%;
+  }
+  .reservation{
+    width: 320px;
+  }
+}
+
+@media (max-width: 716px) {
+  .container-small {
+    width: 80vw;
+    margin-right: 10%;
+    min-width: 530px;
+  }
+  .search-client {
+    width: 80vw;
+    min-width: 530px;
+  }
+  .client-data:hover {
+    background-color: $background-hover;
+  }
+}
+
+@media (max-width: 650px) {
+  .container-small {
+    height: auto;
+    max-height: 42vh;
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .first-three {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    margin: 10px 0;
+    padding: 0 2vh;
+    box-sizing: border-box;
+  }
+
+  .container-small {
+    margin-right: 0px;
+  }
+
+  /* Make containers similar size and proportion to navbar icons */
+  .clients, .vehicles, .revenues {
+    width: 30%;
+    min-width: unset;
+    height: auto;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  /* Style headings to be more compact */
+  .clients h3, .vehicles h3, .revenues h3 {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+  }
+
+  /* Make the counts stand out */
+  .clients-count, .vehicles-count, .revenues-count {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Adjust reservation to match navbar styling */
+  .reservation {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+}

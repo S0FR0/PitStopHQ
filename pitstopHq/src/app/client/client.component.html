@@ -1,0 +1,72 @@
+<button class="btn btn-back" (click)="goBack()">Back</button>
+
+<div class="container">
+  <div class="container-client">
+    <h2>{{ client.firstName }} {{ client.lastName }}</h2>
+    <p class="data">Email: {{client.email}}</p>
+    <p class="data">Phone number: {{ client.phone }}</p>
+    <p class="data">Secondary phone number: {{ client.secondaryPhone || '-' }}</p>
+    <p class="data">Client since: {{ client.date | date:'dd.MM.yyy' }}</p>
+    <div class="btns-client">
+      <button class="btn btn-edit"><mat-icon class="icon-edit" (click)="openEditClientModal()">edit</mat-icon></button>
+      <button class="btn btn-add" (click)="openAddVehicleModal()"><mat-icon class="icon-vehicle">directions_car</mat-icon></button>
+      <button class="btn btn-delete" (click)="showClientDeleteConfirmation(client.id)">Delete</button>
+    </div>
+  </div>
+
+  <div class="container-vehicles">
+    <div class="cell" *ngFor="let vehicle of vehicles">
+      <div class="vehicle-data">
+        <div class="left" (click)="goToVehicle(vehicle.id)">
+          <h2>{{ vehicle.make }} {{ vehicle.model }}</h2>
+          <p>Year: {{ vehicle.year }}</p>
+          <p>License plate: {{ vehicle.licensePlate }}</p>
+          <p>Km: {{ vehicle.km }} | HP: {{ vehicle.horsePower }}</p>
+      </div>
+      <div class="right">
+        <button class="btn btn-edit" (click)="openEditVehicleModal(vehicle.id)">
+          <mat-icon class="icon-edit">edit</mat-icon>
+        </button>
+        <button class="btn btn-delete" (click)="showVehicleDeleteConfirmation(vehicle.id, vehicle.clientId)">Delete</button>
+      </div>
+      </div>
+    </div>
+  
+    <div class="no-vehicle" *ngIf="vehicles.length === 0">
+      <p>There are no vehicles.</p>
+    </div>
+  </div>
+</div>
+
+<div class="background" *ngIf="showAddVehicleModal || showEditClientModal || showEditVehicleModal || showDeleteModal" (click)="closeModal()"></div>
+<app-add-vehicle-modal
+[ngClass]="{'visible-modal': showAddVehicleModal}"
+  [show]="showAddVehicleModal"
+  (close)="closeModal()"
+  (saveVehicle)="onSaveNewVehicle($event)">
+</app-add-vehicle-modal>
+
+<app-edit-client-modal
+[ngClass]="{'visible-modal': showEditClientModal}"
+  [show]="showEditClientModal"
+  [clientId]="client.id"
+  (close)="closeModal()"
+  (clientUpdated)="onClientUpdate($event)">
+</app-edit-client-modal>
+
+<app-edit-vehicle-modal
+[ngClass]="{'visible-modal': showEditVehicleModal}"
+  [show]="showEditVehicleModal"
+  [vehicleId]="selectedVehicleId"
+  (close)="closeModal()"
+  (vehicleUpdated)="onVehicleUpdated($event)">
+</app-edit-vehicle-modal>
+
+<app-delete-confirmation-modal
+[ngClass]="{'visible-delete-modal': showDeleteModal}"
+  [show]="showDeleteModal"
+  [title]="deleteTitle"
+  [message]="deleteMessage"
+  (confirm)="handleConfirmDelete()"
+  (cancel)="cancelDelete()">
+</app-delete-confirmation-modal>

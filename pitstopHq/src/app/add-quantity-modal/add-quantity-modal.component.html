@@ -1,0 +1,35 @@
+<div class="modal" [class.show]="show" [style.display]="show ? 'block' : 'none'">
+    <div class="modal-content">
+        <div>
+            <div class="modal-header">
+                <h5 class="modal-title">Add quantity</h5>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="quantityForm">
+                    <div class="input-row">
+                        <div class="input-container">
+                            <div class="input">
+                                <label for="quantity" class="form-label">Quantity to add</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="quantity"
+                                    formControlName="quantity"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="onSubmit()">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop fade show" *ngIf="show"></div>
+</div>

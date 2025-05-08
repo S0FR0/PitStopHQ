@@ -1,0 +1,54 @@
+<h1>Reservations</h1>
+
+<button class="btn btn-reservation" (click)="openAddModal()">New Reservation</button>
+
+<div class="container">
+  <div class="cell" *ngFor="let reservation of sortedReservations">
+    <div class="reservation-data">
+      <div class="left" (click)="goToReservation(reservation.id)">
+        <h2>{{ reservation.title }}</h2>
+        <p>{{ reservation.clientName }}</p>
+        <p>{{reservation.vehicleMake}} | {{reservation.vehicleModel}} | {{ reservation.vehicleLicensePlate }}</p>
+        <p>{{ reservation.date | date:'dd.MM.yyyy'}} {{ reservation.time }}</p>
+      </div>
+      <div class="right">
+        <button class="btn btn-edit" (click)="$event.stopPropagation(); openEditModal(reservation.id)">
+          <mat-icon class="icon-edit">edit</mat-icon>
+        </button>
+        <button class="btn btn-delete" (click)="$event.stopPropagation(); showDeleteConfirmation(reservation.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-clients" *ngIf="sortedReservations.length === 0">
+    <p>There are no reservations. Add your first reservation.</p>
+  </div>
+</div>
+
+<div class="background" *ngIf="showAddModal || showEditModal || showDeleteModal" (click)="closeModal()"></div>
+<app-reservation-form-modal
+  [ngClass]="{'visible-modal': showAddModal}"
+  [show]="showAddModal"
+  (close)="closeModal()"
+  (saved)="onSaveNewReservation()"
+>
+</app-reservation-form-modal>
+
+<div class="background" *ngIf="showEditModal" (click)="closeModal()"></div>
+<app-edit-reservation-modal
+  [ngClass]="{'visible-modal': showEditModal}"
+  [show]="showEditModal"
+  [reservationId]="selectedReservationId"
+  (close)="closeModal()"
+  (updated)="onReservationUpdated($event)"
+>
+</app-edit-reservation-modal>
+
+<app-delete-confirmation-modal
+  [ngClass]="{'visible-delete-modal': showDeleteModal}"
+  [show]="showDeleteModal"
+  title="Delete Reservation"
+  message="Are you sure you want to delete this reservation?"
+  (confirm)="deleteReservation()"
+  (cancel)="cancelDelete()">
+</app-delete-confirmation-modal>

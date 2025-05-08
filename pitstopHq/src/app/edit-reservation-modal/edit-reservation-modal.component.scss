@@ -1,0 +1,150 @@
+$primary-color: #007bff;
+$primary-light: #acd4ff;
+$yellow: #ffe600f3;
+$yellow-light: #fff6a1f3;
+$red: #ff2e2e;
+$red-light: #f8b0b0;
+$green: #04AA6D;
+$green-light: #68af95;
+
+.modal {
+  background-color: white;
+  height: 70vh;
+  width: 30vw;
+  min-width: 550px;
+  border-radius: 10px;
+}
+
+.modal-content {
+    padding: 2% % 0% 5%;
+    height: 97%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: medium;
+}
+
+.row {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-row {
+    display: flex;
+    gap: 30%;
+    margin: 0% 5%;
+}
+
+select {
+    width: 159px;
+    height: 29px;
+    padding: 5px 0px 5px 5px;
+    margin: 2px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+.invalid {
+    color: red;
+    font-size: medium;
+    position: relative;
+    top: -15px;
+    margin-left: 10px;
+    font-size: smaller;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.btn {
+    border: 0px;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+}
+
+.btn-primary:hover {
+    background-color: $primary-light;
+    border: 2px solid $primary-color;
+}
+
+.btn-secondary {
+    background-color: $red;
+    border: 2px solid $red;
+}
+
+.btn-secondary:hover{
+    background-color: $red-light;
+    border: 2px solid $red;
+}
+
+.btn-close {
+    width: 30px;
+}
+
+input {
+    height: 15px;
+    padding: 5px 0px 5px 5px;
+    width: 150px;
+}
+
+.btn-back {
+    background-color: $yellow;
+    border: 2px solid $yellow;
+}
+
+.btn-back:hover {
+    background-color: $yellow-light;
+    border: 2px solid $yellow;
+}
+
+.btn-success {
+    background-color: $green;
+    border: 2px solid $green;
+}
+
+.btn-success:hover {
+    background-color: $green-light;
+    border: 2px solid $green;
+}
+
+.modal-footer {
+    position: relative;
+    top: -40px;
+    padding: 0px 20px;
+}
+
+@media (max-width: 600px) {
+    .modal {
+        min-width: 300px;
+    }
+}

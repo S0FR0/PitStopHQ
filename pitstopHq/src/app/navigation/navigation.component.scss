@@ -1,0 +1,90 @@
+$primary-color: #007bff;
+$light-color: #f8f9fa;
+
+.navigation {
+    background-color: $primary-color;
+    padding: 20px;
+    height: calc(100vh - 9%);
+    width: 3vw;
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+
+    .logo{
+            color: $light-color;
+            height: 24px;
+    }
+
+    section {
+        margin-top: 50px;
+        font-size: x-large;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            text-decoration: none;
+            color: $light-color;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            width: 24px;
+            padding-right: 12px;
+        
+
+        &:hover {
+            background-color: $light-color;
+            color: $primary-color;
+        }
+
+        &.active{
+            background-color: $light-color;
+            color: $primary-color;
+        }
+    }
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation {
+        height: auto;
+        width: calc(100vw - 4vh - 4vw); /* Maintain consistent width calculation */
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+        margin: 2vh; /* This adds equal margin all around */
+        margin-left: 2vw;
+        margin-right: 2vw;
+        box-sizing: border-box; /* This ensures padding is included in width calculation */
+        
+        /* Additional fixes */
+        .logo {
+            margin-right: 20px;
+        }
+        
+        section {
+            margin-top: 0;
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: space-evenly;
+            margin-right: 0; /* Ensure no extra right margin on section */
+            
+            a {
+                margin-bottom: 0;
+                margin-right: 10px;
+                height: 40px;
+                width: auto;
+                justify-content: center;
+                padding: 0 15px;
+                
+                &:last-child {
+                    margin-right: 0; /* Remove margin from last item */
+                }
+            }
+        }
+    }
+}

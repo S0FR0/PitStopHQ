@@ -1,0 +1,110 @@
+<div class="modal" [class.show]="show" [style.display]="show ? 'block' : 'none'">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Client</h2>
+        <button class="close-button" (click)="closeModal()">x</button>
+      </div>
+      
+      <div class="modal-body">
+        <form [formGroup]="clientForm">
+
+            <div class="input-row">
+            <div class="input-container">
+              <div class="input">
+                <label for="lastName" class="form-label">Last Name*</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="lastName" 
+                  formControlName="lastName"
+                  [ngClass]="{'is-invalid': submitted && cf['lastName'].errors}"
+                >
+              </div>
+              <div *ngIf="submitted && cf['lastName']?.errors" class="invalid">
+                <div *ngIf="cf['lastName']?.errors?.['required']">Last name is mandatory</div>
+                <div *ngIf="cf['lastName']?.errors?.['minlength']">Must have at least 3 characters</div>
+                <div *ngIf="cf['lastName']?.errors?.['pattern']">Last name must start with a capital letter and contain only letters</div>
+              </div>
+          </div>
+
+            <div class="input-container">
+              <div class="input">
+                <label for="firstName" class="form-label">First Name*</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="firstName" 
+                  formControlName="firstName"
+                  [ngClass]="{'is-invalid': submitted && cf['firstName'].errors}"
+                >
+              </div>
+              <div ngClass="" *ngIf="submitted && cf['firstName']?.errors" class="invalid">
+                <div *ngIf="cf['firstName']?.errors?.['required']">First name is mandatory</div>
+                <div *ngIf="cf['firstName']?.errors?.['minlength']">First name must have at least 3 characters</div>
+                <div *ngIf="cf['firstName']?.errors?.['pattern']">First name must start with a capital letter and contain only letters</div>
+              </div>
+            </div>
+          </div>
+
+            <div class="input-row">
+            <div class="input-container">
+              <div class="input">
+                <label for="phone" class="form-label">Phone Number*</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="phone" 
+                  formControlName="phone"
+                  [ngClass]="{'is-invalid': submitted && cf['phone'].errors}"
+                >
+              </div>
+              <div *ngIf="submitted && cf['phone']?.errors" class="invalid">
+                <div *ngIf="cf['phone']?.errors?.['required']">Phone number is mandatory</div>
+                <div *ngIf="cf['phone']?.errors?.['pattern']">Phone number must have 10 digits</div>
+              </div>
+            </div>
+
+            <div class="input-container">
+              <div class="input">
+                <label for="secondaryPhone" class="form-label">Secondary Phone</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="secondaryPhone" 
+                  formControlName="secondaryPhone"
+                  [ngClass]="{'is-invalid': submitted && cf['secondaryPhone'].errors}"
+                >
+              </div>
+              <div *ngIf="submitted && cf['secondaryPhone']?.errors" class="invalid">
+                <div *ngIf="cf['secondaryPhone']?.errors?.['pattern']">Phone number must have 10 digits</div>
+              </div>
+            </div>
+          </div>
+
+            <div class="input-row">
+            <div class="input-container">
+              <div class="input">
+                <label for="email" class="form-label">Email*</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  formControlName="email"
+                  [ngClass]="{'is-invalid': submitted && cf['email'].errors}"
+                >
+              </div>
+              <div *ngIf="submitted && cf['email']?.errors" class="invalid">
+                <div *ngIf="cf['email']?.errors?.['required']">Email is mandatory</div>
+                <div *ngIf="cf['email']?.errors?.['email']">Invalid email address</div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      
+      <div class="modal-footer">
+        <button class="cancel-button" (click)="closeModal()">Cancel</button>
+        <button class="save-button" (click)="onSubmit()">Save Changes</button>
+      </div>
+    </div>
+  </div>

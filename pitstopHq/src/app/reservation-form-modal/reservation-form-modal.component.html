@@ -1,0 +1,151 @@
+<div class="modal" [class.show]="show" [style.display]="show ? 'block' : 'none'">
+  <div class="modal-content">
+      <div>
+          <div class="modal-header">
+              <h5 class="modal-title">New Reservation</h5>
+          </div>
+
+          <div class="modal-body">
+            <form [formGroup]="reservationForm">
+              
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="clientId" class="form-label">Client*</label>
+                    <select
+                      id="clientId"
+                      class="form-control"
+                      formControlName="clientId"
+                      [ngClass]="{'is-invalid': submitted && rf['clientId'].errors}"
+                    >
+                      <option value="">-- Select a client --</option>
+                      <option *ngFor="let client of clients" [value]="client.id">
+                        {{ client.firstName }} {{ client.lastName }}
+                      </option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && rf['clientId']?.errors" class="invalid">
+                    <div *ngIf="rf['clientId']?.errors?.['required']">Client selection is required</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="vehicleId" class="form-label">Vehicle*</label>
+                    <select
+                      id="vehicleId"
+                      class="form-control"
+                      formControlName="vehicleId"
+                      [ngClass]="{'is-invalid': submitted && rf['vehicleId'].errors}"
+                    >
+                      <option value="">-- Select a vehicle --</option>
+                      <option *ngFor="let vehicle of clientVehicles" [value]="vehicle.id">
+                        {{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }}) - {{ vehicle.licensePlate }}
+                      </option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && rf['vehicleId']?.errors" class="invalid">
+                    <div *ngIf="rf['vehicleId']?.errors?.['required']">Vehicle selection is required</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="contactMethod" class="form-label">Preferred Contact Method*</label>
+                    <select
+                      id="contactMethod"
+                      class="form-control"
+                      formControlName="contactMethod"
+                      [ngClass]="{'is-invalid': submitted && rf['contactMethod'].errors}"
+                    >
+                      <option value="">-- Select contact method --</option>
+                      <option *ngFor="let method of contactMethods" [value]="method.value">
+                        {{ method.display }}
+                      </option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && rf['contactMethod']?.errors" class="invalid">
+                    <div *ngIf="rf['contactMethod']?.errors?.['required']">Contact method is required</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="title" class="form-label">Reservation Title/Purpose*</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      formControlName="title"
+                      [ngClass]="{'is-invalid': submitted && rf['title'].errors}"
+                    >
+                  </div>
+                  <div *ngIf="submitted && rf['title']?.errors" class="invalid">
+                    <div *ngIf="rf['title']?.errors?.['required']">Title is required</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="date" class="form-label">Select Date*</label>
+                    <select
+                      id="date"
+                      class="form-control"
+                      formControlName="date"
+                      [ngClass]="{'is-invalid': submitted && rf['date'].errors}"
+                    >
+                      <option value="">-- Select a date --</option>
+                      <option *ngFor="let dateObj of availableDates" [value]="dateObj.date">
+                        {{ dateObj.date | date:'EEE, MMM d' }}
+                      </option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && rf['date']?.errors" class="invalid">
+                    <div *ngIf="rf['date']?.errors?.['required']">Date selection is required</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="input-row" *ngIf="selectedDateSlots.length">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="time" class="form-label">Select Time*</label>
+                    <select
+                      id="time"
+                      class="form-control"
+                      formControlName="time"
+                      [ngClass]="{'is-invalid': submitted && rf['time'].errors}"
+                    >
+                      <option value="">-- Select a time --</option>
+                      <option *ngFor="let slot of selectedDateSlots" [value]="slot.value">
+                        {{ slot.display }}
+                      </option>
+                    </select>
+                  </div>
+                  <div *ngIf="submitted && rf['time']?.errors" class="invalid">
+                    <div *ngIf="rf['time']?.errors?.['required']">Time selection is required</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      <button type="button" class="btn btn-success" (click)="onSubmit()">
+        Create Reservation
+      </button>
+  </div>
+  </div>
+
+<div class="modal-backdrop fade show" *ngIf="show"></div>

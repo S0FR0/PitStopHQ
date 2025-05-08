@@ -1,0 +1,115 @@
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
+
+.btn {
+  background-color:  $background-color;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.btn-client {
+  height: 40px;
+  background-color: $background-color;
+  color: $active;
+  border: 1px solid $active;
+}
+
+.icon-edit {
+  color: gold;
+}
+
+.btn-client:hover {
+  background-color: $active-background;
+}
+
+.container {
+  margin-top: 2vh;
+  max-height: 78vh;
+  width: 80%;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+
+  .client-data {
+    padding: 10px 0px;
+    padding-left: 3%;
+    display: flex;
+
+    .left {
+      width: 80%;
+      cursor: pointer;
+    }
+
+    .right {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      .btn {
+        width: 60px;
+        height: 40px;
+      }
+
+      .btn-edit{
+        background-color: palegoldenrod;
+        border: 1px solid gold;
+      }
+
+      .btn-delete{
+        background-color: $inactive-background;
+        color: $inactive;
+        border: 1px solid $inactive;
+      }
+    }
+  }
+
+  .client-data:hover {
+    background-color: $background-color;
+    border-radius: 10px;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.visible-modal {
+  z-index: 1001;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 700px) {
+  .client-data{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(90vw - 4vh);
+    max-height: 60vh;
+  }
+}

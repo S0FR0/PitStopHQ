@@ -1,0 +1,51 @@
+<h1>Parts</h1>
+
+<button class="btn btn-create" (click)="openCreateModal()">New part</button>
+
+<div class="container">
+
+    <div *ngIf="parts.length === 0">
+        <p>There are no parts. Add your first part.</p>
+    </div>
+
+    <div class="cell" *ngFor="let part of parts">
+        <div class="part-data">
+            <div class="left">
+                <p>#{{part.partNumber}}</p>
+                <h2>{{part.name}}</h2>
+                <p>$ {{part.price}}</p>
+            </div>
+            <div class="right">
+                <p>Quantity: {{part.stockQuantity}}</p>
+                <button class="btn btn-add" (click)="openAddModal(part.id)"><mat-icon>add</mat-icon></button>
+                <button class="btn btn-delete" (click)="confirmDeletePart(part.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="background" *ngIf="showAddModal || showCreateModal || showDeleteModal" (click)="closeModal()"></div>
+
+<app-add-part-modal
+    [ngClass]="{'visible-modal': showCreateModal}"
+    [show]="showCreateModal" 
+    (close)="closeModal()"
+    (savePart)="onSaveNewPart($event)"
+></app-add-part-modal>
+
+<app-add-quantity-modal
+    [ngClass]="{'visible-modal': showAddModal}"
+    [show]="showAddModal"
+    [partId]="selectedPartId"
+    (close)="closeModal()"
+    (quantityUpdate)="onQuantityUpdate()"
+></app-add-quantity-modal>
+
+<app-delete-confirmation-modal
+    [ngClass]="{'visible-delete-modal': showDeleteModal}"
+    [show]="showDeleteModal"
+    title="Delete Part"
+    message="Are you sure you want to delete this part?"
+    (confirm)="confirmDelete()"
+    (cancel)="cancelDelete()">
+</app-delete-confirmation-modal>

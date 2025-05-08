@@ -1,0 +1,220 @@
+<div class="modal" [class.show]="show" [style.display]="show ? 'block' : 'none'">
+    <div class="modal-content">
+        <div>
+            <div class="modal-header">
+                <h5 class="modal-title">Add vehicle</h5>
+                <button type="button" class="btn btn-close" (click)="closeModal()">x</button>
+            </div>
+
+            <div class="modal-body">
+              <form [formGroup]="vehicleForm">
+            
+                <div class="input-row">
+                  <div class="input-container">
+                    <div class="input">
+                      <label for="make" class="form-label">Make*</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="make" 
+                        formControlName="make"
+                        [ngClass]="{'is-invalid': submitted && vf['make'].errors}"
+                      >
+                    </div>
+                    <div *ngIf="submitted && vf['make']?.errors" class="invalid">
+                      <div *ngIf="vf['make']?.errors?.['required']">Make is mandatory</div>
+                      <div *ngIf="vf['make']?.errors?.['pattern']">Make must start with a capital letter and contain only letters</div>
+                    </div>
+                  </div>
+    
+                  <div class="input-container">
+                    <div class="input">
+                      <label for="model" class="form-label">Model*</label>
+                      <input 
+                        type="text" 
+                        class="form-control" 
+                        id="model" 
+                        formControlName="model"
+                        [ngClass]="{'is-invalid': submitted && vf['model'].errors}"
+                      >
+                    </div>
+                    <div *ngIf="submitted && vf['model']?.errors" class="invalid">
+                      <div *ngIf="vf['model']?.errors?.['required']">Model is mandatory</div>
+                      <div *ngIf="vf['model']?.errors?.['pattern']">Model must start with a capital letter and contain only letters</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="input-row">
+                  <div class="input-container">
+                    <div class="input">
+                      <label for="year" class="form-label">Year*</label>
+                      <input 
+                        type="number" 
+                        class="form-control" 
+                        id="year" 
+                        formControlName="year"
+                        [ngClass]="{'is-invalid': submitted && vf['year'].errors}"
+                      >
+                    </div>
+                    <div *ngIf="submitted && vf['year']?.errors" class="invalid">
+                      <div *ngIf="vf['year']?.errors?.['required']">Year is mandatory</div>
+                      <div *ngIf="vf['year']?.errors?.['min'] || vf['year']?.errors?.['max']">Invalid year</div>
+                    </div>
+                  </div>
+    
+                  <div class="input-container">
+                    <div class="input-container">
+                      <div class="input">
+                        <label for="engineCapacity" class="form-label">Engine Capacity (cc)*</label>
+                        <input 
+                          type="number" 
+                          class="form-control" 
+                          id="engineCapacity" 
+                          formControlName="engineCapacity"
+                          [ngClass]="{'is-invalid': submitted && vf['engineCapacity'].errors}"
+                        >
+                      </div>
+                      <div *ngIf="submitted && vf['engineCapacity']?.errors" class="invalid">
+                        <div *ngIf="vf['engineCapacity']?.errors?.['required']">Engine capacity is mandatory</div>
+                        <div *ngIf="vf['engineCapacity']?.errors?.['min'] || vf['engineCapacity']?.errors?.['max']">
+                          Engine capacity must be between 0 and 10000 cc
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="input-row">
+                  <div class="input-container">
+                    <div class="input">
+                      <label for="engineType" class="form-label">Engine Type*</label>
+                      <select 
+                        id="engineType" 
+                        class="form-control"
+                        formControlName="engineType" 
+                        [ngClass]="{'is-invalid': submitted && vf['engineType'].errors}"
+                        aria-placeholder="Diesel"
+                      >
+                        <option *ngFor="let type of engineTypes" [value]="type">
+                          {{ type | titlecase }}
+                        </option>
+                      </select>
+                    </div>
+                      <div *ngIf="submitted && vf['engineType']?.errors" class="invalid">
+                      <div *ngIf="vf['engineType']?.errors?.['required']">Engine type is mandatory</div>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <div class="input">
+                      <label for="km" class="form-label">Km*</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="km"
+                        formControlName="km"
+                        [ngClass]="{'is-invalid': submitted && vf['km'].errors}"
+                      >
+                    </div>
+                    <div *ngIf="submitted && vf['km']?.errors" class="invalid">
+                    <div *ngIf="vf['km']?.errors?.['required']">HP is mandatory</div>
+                    <div *ngIf="vf['horsePower']?.errors?.['max']">
+                      Km must be under 1000000
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="horsePower" class="form-label">Power (HP)*</label>
+                    <input 
+                      type="number" 
+                      class="form-control" 
+                      id="horsePower" 
+                      formControlName="horsePower"
+                      (input)="onHorsePowerChange($event)"
+                      [ngClass]="{'is-invalid': submitted && vf['horsePower'].errors}"
+                    >
+                  </div>
+                  <div *ngIf="submitted && vf['horsePower']?.errors" class="invalid">
+                    <div *ngIf="vf['horsePower']?.errors?.['required']">HP is mandatory</div>
+                    <div *ngIf="vf['horsePower']?.errors?.['min'] || vf['horsePower']?.errors?.['max']">
+                      HP must be between 0 and 2000
+                    </div>
+                  </div>
+                </div>
+                  
+                <div class="input-container">
+                  <div class="input">
+                    <label for="kwPower" class="form-label">Power (kW)*</label>
+                    <input 
+                      type="number" 
+                      class="form-control" 
+                      id="kwPower" 
+                      formControlName="kwPower"
+                      (input)="onKwPowerChange($event)"
+                      [ngClass]="{'is-invalid': submitted && vf['kwPower'].errors}"
+                    >
+                  </div>
+                  <div *ngIf="submitted && vf['kwPower']?.errors" class="invalid">
+                    <div *ngIf="vf['kwPower']?.errors?.['required']">kW is mandatory</div>
+                    <div *ngIf="vf['kwPower']?.errors?.['min'] || vf['kwPower']?.errors?.['max']">
+                      kW must be between 0 and 1500
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="input-row">
+                <div class="input-container">
+                  <div class="input">
+                    <label for="licensePlate" class="form-label">Registration Number*</label>
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="licensePlate" 
+                      formControlName="licensePlate"
+                      [ngClass]="{'is-invalid': submitted && vf['licensePlate'].errors}"
+                    >
+                  </div>
+                  <div *ngIf="submitted && vf['licensePlate']?.errors" class="invalid">
+                    <div *ngIf="vf['licensePlate']?.errors?.['required']">Registration number is mandatory</div>
+                    <div *ngIf="vf['licensePlate']?.errors?.['pattern']">Invalid format</div>
+                  </div>
+                </div>
+                
+                <div class="input-container">
+                  <div class="input">
+                    <label for="chassisNumber" class="form-label">Chassis Number*</label>
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="chassisNumber" 
+                      formControlName="chassisNumber"
+                      [ngClass]="{'is-invalid': submitted && vf['chassisNumber'].errors}"
+                    >
+                  </div>
+                  <div *ngIf="submitted && vf['chassisNumber']?.errors" class="invalid">
+                    <div *ngIf="vf['chassisNumber']?.errors?.['required']">Chassis number is mandatory</div>
+                    <div *ngIf="vf['chassisNumber']?.errors?.['minlength'] || vf['chassisNumber']?.errors?.['maxlength']">Chassis number must be 17 characters</div>
+                    <div *ngIf="vf['chassisNumber']?.errors?.['pattern']">Chassis number must only contain uppercase letters and numbers</div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        
+        <button type="button" class="btn btn-success" (click)="onSubmit()">
+          Save
+        </button>
+    </div>
+    </div>
+
+<div class="modal-backdrop fade show" *ngIf="show"></div>

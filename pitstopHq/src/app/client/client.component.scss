@@ -1,0 +1,249 @@
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
+$primary-color: #007bff;
+$light-color: #f8f9fa;
+
+.container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  gap: 10%;
+
+  .container-client {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 0px 1% 2% 1%;
+    height: 350px;
+
+    @media (max-width: 1435px) {
+      height: 400px;
+    }
+
+    @media (max-width: 700px) {
+      height: 300px;
+      margin-right: 10vw;
+    }
+    
+    @media (max-width: 485px) {
+      height: 350px;
+    }
+  }
+
+  .data {
+    color: grey;
+    margin-top: 30px;
+  }
+
+  .btns-client {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.btn {
+  background-color:  $primary-color;
+  color: $light-color;
+  font-size: large;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 40px;
+  width: 65px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: palegoldenrod;
+  border: 1px solid gold;
+}
+
+.btn-delete {
+  background-color: $inactive-background;
+  color: $inactive;
+  border: 1px solid $inactive;
+}
+
+.btn-add {
+  background-color: $active-background;
+  border: 1px solid $active;
+}
+
+.icon-vehicle {
+  color: $active;
+}
+
+.icon-edit {
+  color: gold;
+}
+
+
+.btn-back {
+  margin: 20px 0px 20px 20px;
+}
+
+.container-vehicles {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  max-height: 80vh;
+  width: 60%;
+  padding: 10px;
+  overflow-y: auto;
+  margin-right: 10vw;
+
+  .vehicle-data {
+    padding: 10px 0px;
+    padding-left: 3%;
+    display: flex;
+
+    .left {
+      width: 70%;
+      cursor: pointer;
+    }
+
+    .right {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  .vehicle-data:hover {
+    background-color: $background-color;
+    border-radius: 10px;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible-modal {
+  z-index: 1001;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.visible-delete-modal {
+  z-index: 1001;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media(max-width: 700px) {
+  .container {
+    flex-direction: column;
+    gap: 3%;
+  }
+  .container-vehicles{
+    width: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .vehicle-data{
+    flex-direction: column;
+    align-items: center;
+  }
+  .right {
+    justify-content: center;
+    width: 150px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container-client{
+    text-align: center;
+  .btns-client {
+    justify-content: center;
+    gap: 10px;
+  }
+  }
+  .right{
+    width: 40%;
+  }
+  .left * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Client profile container adjustments */
+  .container {
+    width: calc(90vw - 4vh);
+  }
+
+  /* Blue panels for client info and vehicle */
+  .container-client {
+    width: 100%;
+    margin-right: 0;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Back button positioning */
+  .btn-back {
+    margin: 0 0 5px 15px;
+  }
+
+  /* Action buttons sizing and spacing */
+  .btns-client {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .btn {
+    width: 75px;
+    height: 40px;
+  }
+
+  /* Vehicle details container */
+  .container-vehicles {
+    width: 100%;
+    height: 40vh;
+    margin-right: 0;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Modal positioning for small screens */
+  .visible-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .visible-delete-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .data {
+    margin-bottom: 10px;
+  }
+}

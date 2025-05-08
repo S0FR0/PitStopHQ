@@ -1,0 +1,184 @@
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
+$primary-color: #007bff;
+$light-color: #f8f9fa;
+
+.container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  gap: 10%;
+
+  .container-client {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 0px 1% 2% 1%;
+    height: 300px;
+
+    @media (max-width: 1435px) {
+      height: 400px;
+    }
+
+    @media (max-width: 700px) {
+      height: 300px;
+    }
+  }
+
+  .data {
+    color: grey;
+    margin-top: 30px;
+  }
+
+  .btns-client {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.btn {
+  background-color:  $primary-color;
+  color: $light-color;
+  font-size: large;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 40px;
+  width: 65px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: palegoldenrod;
+  border: 1px solid gold;
+}
+
+.btn-delete {
+  background-color: $inactive-background;
+  color: $inactive;
+  border: 1px solid $inactive;
+}
+
+.btn-add {
+  background-color: $active-background;
+  border: 1px solid $active;
+}
+
+.icon-vehicle {
+  color: $active;
+}
+
+.icon-edit {
+  color: gold;
+}
+
+
+.btn-back {
+  margin: 20px 0px 20px 20px;
+}
+
+.container-vehicles {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  max-height: 80vh;
+  width: 60%;
+  padding: 10px;
+  overflow-y: auto;
+
+  .vehicle-data {
+    padding: 10px 0px;
+    padding-left: 3%;
+    display: flex;
+
+    .left {
+      width: 70%;
+      cursor: pointer;
+    }
+
+    .right {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  .vehicle-data:hover {
+    background-color: $background-color;
+    border-radius: 10px;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.visible-modal {
+  position: absolute;
+  top: calc(50% - 35vh);
+  left: calc(50% - 15vw);
+  z-index: 1001;
+}
+
+.visible-delete-modal {
+  position: absolute;
+  top: calc(50% - 175px);
+  left: calc(50% - 250px);
+  z-index: 1001;
+}
+
+@media(max-width: 700px) {
+  .container {
+    flex-direction: column;
+    gap: 3%;
+  }
+  .container-vehicles{
+    width: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .vehicle-data{
+    flex-direction: column;
+    align-items: center;
+  }
+  .right {
+    justify-content: center;
+    width: 150px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container-client{
+    text-align: center;
+  .btns-client {
+    justify-content: center;
+    gap: 10px;
+  }
+  }
+  .right{
+    width: 40%;
+  }
+  .left * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(90vw - 4vh);
+  }
+  .container-vehicles {
+    height: 35vh;
+  }
+}

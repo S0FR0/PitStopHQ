@@ -1,0 +1,44 @@
+<h1>Vehicles</h1>
+
+<div class="container">
+  <div class="cell" *ngFor="let vehicle of vehicles">
+    <div class="vehicle-data">
+      <div class="left" (click)="goToVehicle(vehicle.id)">
+        <h2>{{ vehicle.make }} {{ vehicle.model }}</h2>
+        <p>Year: {{ vehicle.year }}</p>
+        <p>License plate: {{ vehicle.licensePlate }}</p>
+        <p>Km: {{ vehicle.km }} | HP: {{ vehicle.horsePower }}</p>
+    </div>
+    <div class="right">
+      <button class="btn btn-edit" (click)="openModal(vehicle.id)">
+        <mat-icon class="icon-edit">edit</mat-icon>
+      </button>
+      <!-- Change to call confirmDeleteVehicle instead of deleteVehicle -->
+      <button class="btn btn-delete" (click)="confirmDeleteVehicle(vehicle.id)">Delete</button>
+    </div>
+    </div>
+  </div>
+
+  <div class="no-vehicle" *ngIf="vehicles.length === 0">
+    <p>There are no vehicles.</p>
+  </div>
+</div>
+
+<div class="background" *ngIf="showModal || showDeleteModal" (click)="closeModal()"></div>
+
+<app-edit-vehicle-modal
+  [ngClass]="{'visible-modal': showModal}"
+  [show]="showModal"
+  [vehicleId]="selectedVehicleId"
+  (close)="closeModal()"
+  (vehicleUpdated)="onVehicleUpdated($event)">
+</app-edit-vehicle-modal>
+
+<app-delete-confirmation-modal
+  [ngClass]="{'visible-delete-modal': showDeleteModal}"
+  [show]="showDeleteModal"
+  title="Delete Vehicle"
+  message="Are you sure you want to delete this vehicle?"
+  (confirm)="handleConfirmDelete()"
+  (cancel)="cancelDeleteVehicle()">
+</app-delete-confirmation-modal>
