@@ -6,7 +6,7 @@ $inactive-background: lightcoral;
 $background-hover: rgb(212, 212, 212);
 
 .btn {
-  background-color:  $background-color;
+  background-color: white;
   border: 1px solid lightgray;
   border-radius: 10px;
   height: 30px;
@@ -15,7 +15,6 @@ $background-hover: rgb(212, 212, 212);
 
 .btn-client {
   height: 40px;
-  background-color: $background-color;
   color: $active;
   border: 1px solid $active;
 }
@@ -30,7 +29,7 @@ $background-hover: rgb(212, 212, 212);
 
 .container {
   margin-top: 2vh;
-  max-height: 78vh;
+  max-height: 74vh;
   width: 80%;
   border: 2px solid lightgray;
   border-radius: 10px;
@@ -60,8 +59,12 @@ $background-hover: rgb(212, 212, 212);
       }
 
       .btn-edit{
-        background-color: palegoldenrod;
+        background-color: white;
         border: 1px solid gold;
+      }
+
+      .btn-edit:hover {
+        background-color: palegoldenrod;
       }
 
       .btn-delete{

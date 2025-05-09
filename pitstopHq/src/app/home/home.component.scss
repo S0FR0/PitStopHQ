@@ -123,44 +123,31 @@ $background-hover: rgb(212, 212, 212);
   height: 30px;
 }
 
-/* Style for the table */
-.table-container {
-  width: 90%;
-  height: 50vh; /* Fixed height - adjust as needed */
-  margin-top: 10px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  overflow: hidden; /* Hide overflow at container level */
-}
-
-/* Basic table styling */
 .table-container {
   width: 90%;
   border: 2px solid lightgray;
+  margin-top: 10px;
   border-radius: 10px;
   overflow: hidden;
-  height: 59vh;
+  height: 55vh;
 }
 
-/* Base table styling */
 table {
   width: 100%;
   border-collapse: collapse;
   max-height: 60vh;
 }
 
-/* Cell styling */
 th, td {
   border: none;
   padding: 8px 12px;
   text-align: center;
 }
 
-/* Prevent text truncation in cells */
 td {
-  white-space: nowrap; /* Keep text on one line */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Show ellipsis for overflow */
+  text-overflow: ellipsis;
   align-self: cent;
   cursor: pointer;
 }
@@ -171,32 +158,28 @@ td {
 
 tbody {
   display: block;
-  max-height: 57vh;
+  max-height: 49vh;
   overflow-y: auto;
 }
 
-/* Force table rows to be table display type */
 thead, tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
-/* Account for scrollbar width in header */
 thead {
   width: calc(100% - 17px);
 }
 
-/* Column width distribution */
-th:nth-child(1), td:nth-child(1) { width: 15%; } /* Name */
-th:nth-child(2), td:nth-child(2) { width: 20%; } /* Email */
-th:nth-child(3), td:nth-child(3) { width: 15%; } /* PhoneNumber */
-th:nth-child(4), td:nth-child(4) { width: 15%; } /* Secondary */
-th:nth-child(5), td:nth-child(5) { width: 8%; } /* Vehicles */
-th:nth-child(6), td:nth-child(6) { width: 15%; } /* Registration date */
-th:nth-child(7), td:nth-child(7) { width: 12%; } /* Activity Status */
+th:nth-child(1), td:nth-child(1) { width: 15%; }
+th:nth-child(2), td:nth-child(2) { width: 20%; }
+th:nth-child(3), td:nth-child(3) { width: 15%; }
+th:nth-child(4), td:nth-child(4) { width: 15%; }
+th:nth-child(5), td:nth-child(5) { width: 8%; } 
+th:nth-child(6), td:nth-child(6) { width: 15%; }
+th:nth-child(7), td:nth-child(7) { width: 12%; }
 
-/* Optional: add a little more padding for better readability */
 th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -333,7 +316,6 @@ th {
     margin-right: 0px;
   }
 
-  /* Make containers similar size and proportion to navbar icons */
   .clients, .vehicles, .revenues {
     width: 30%;
     min-width: unset;
@@ -347,13 +329,11 @@ th {
     border-radius: 10px;
   }
 
-  /* Style headings to be more compact */
   .clients h3, .vehicles h3, .revenues h3 {
     font-size: 14px;
     margin: 0 0 5px 0;
   }
 
-  /* Make the counts stand out */
   .clients-count, .vehicles-count, .revenues-count {
     font-size: 18px;
     font-weight: bold;
@@ -361,7 +341,6 @@ th {
     margin: 0;
   }
 
-  /* Adjust reservation to match navbar styling */
   .reservation {
     width: 100%;
     margin-top: 10px;

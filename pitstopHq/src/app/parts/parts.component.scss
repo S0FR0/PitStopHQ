@@ -6,8 +6,8 @@ $inactive-background: lightcoral;
 $background-hover: rgb(212, 212, 212);
 
 .btn {
-  background-color:  $background-color;
   border: 1px solid lightgray;
+  background-color: white;
   border-radius: 10px;
   height: 30px;
   cursor: pointer;
@@ -19,9 +19,12 @@ $background-hover: rgb(212, 212, 212);
 
 .btn-create {
   height: 40px;
-  background-color: $background-color;
   color: $active;
   border: 1px solid $active;
+}
+
+.btn-create:hover {
+  background-color: $active-background;
 }
 
 .btncreate:hover {
@@ -30,7 +33,7 @@ $background-hover: rgb(212, 212, 212);
 
 .container {
   margin-top: 2vh;
-  max-height: 78vh;
+  max-height: 74vh;
   width: 80%;
   border: 2px solid lightgray;
   border-radius: 10px;
@@ -66,9 +69,12 @@ $background-hover: rgb(212, 212, 212);
       }
 
       .btn-delete{
-        background-color: $inactive-background;
         color: $inactive;
         border: 1px solid $inactive;
+      }
+      
+      .btn-delete:hover {
+        background-color: $inactive-background;
       }
     }
   }

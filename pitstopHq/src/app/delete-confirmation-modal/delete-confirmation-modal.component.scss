@@ -29,14 +29,15 @@ $background-hover: rgb(212, 212, 212);
 }
 
 .btn {
-    border: 0px;
-    border-radius: 5px;
-    padding: .5em;
-    font-size: medium;
-    cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  padding: .5em;
+  font-size: medium;
+  cursor: pointer;
 }
 
 .btn-confirm{
+    background-color: white;
     color: $inactive;
     border: 1px solid $inactive;
   }

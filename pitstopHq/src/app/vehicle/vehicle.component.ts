@@ -111,7 +111,8 @@ export class VehicleComponent implements OnInit {
     this.vehicle = updatedVehicle;
   }
 
-  closeModal() {
+  closeModal(): void {
     this.showEditVehicleModal = false;
+    this.showDeleteModal = false;
   }
 }

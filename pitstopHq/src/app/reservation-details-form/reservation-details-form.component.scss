@@ -2,12 +2,11 @@ $primary-color: #007bff;
 $primary-light: #acd4ff;
 $yellow: #ffe600f3;
 $yellow-light: #fff6a1f3;
-$red: #ff2e2e;
-$red-light: #f8b0b0;
+$inactive: crimson;
+$inactive-background: lightcoral;
 $green: forestgreen;
 $green-light: lightgreen;
 
-/* Base styles */
 .form-container {
   background-color: white;
   border: 2px solid lightgray;
@@ -41,14 +40,11 @@ $green-light: lightgreen;
   cursor: pointer;
 }
 
-/* Form body with overflow */
 .form-body {
   padding: 20px;
   overflow-y: auto;
   flex: 1;
 }
-
-/* Form elements */
 .form-group {
   margin-bottom: 15px;
 }
@@ -59,36 +55,32 @@ $green-light: lightgreen;
   font-weight: 500;
 }
 
-/* Unified form control styling */
 .form-control {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 14px;
-  height: 35px; /* Unified height for all controls */
+  height: 35px;
   box-sizing: border-box;
 }
 
-/* Specific styles for different form elements */
 select.form-control {
   background-color: white;
-  appearance: menulist; /* Show the dropdown arrow */
+  appearance: menulist;
 }
 
 textarea.form-control {
   resize: vertical;
-  min-height: 35px; /* Match the height of other inputs */
-  height: auto; /* Allow multi-line content */
+  min-height: 35px;
+  height: auto;
 }
 
-/* Disabled textarea styling - more visible disabled state */
 textarea:disabled {
   background-color: #e9ecef;
   border-color: lightgray;
 }
 
-/* Checkbox styling */
 .checkbox-row {
   display: flex;
   align-items: center;
@@ -101,15 +93,13 @@ textarea:disabled {
   height: auto;
 }
 
-/* Validation error message styling */
 .invalid {
-  color: $red;
+  color: red;
   font-size: 12px;
   margin-top: 4px;
   display: block;
 }
 
-/* Parts section styling */
 .parts-section {
   margin-top: 15px;
   padding: 15px;
@@ -139,16 +129,25 @@ textarea:disabled {
   flex: 1;
 }
 
-.btn-delete {
-  background-color: $red;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  height: 35px;
+.btn {
+  border: 0px;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: medium;
+    cursor: pointer;
 }
 
-/* Footer styling - always visible */
+.btn-delete {
+  background-color: white;
+  color: $inactive;
+  border: 1px solid $inactive;
+}
+
+.btn-delete:hover {
+  background-color: $inactive-background;
+  border: 1px solid $inactive;
+}
+
 .form-footer {
   padding: 15px 20px;
   background-color: white;
@@ -173,32 +172,17 @@ textarea:disabled {
   gap: 10px;
 }
 
-/* Button styling to match examples */
-.btn {
-  padding: 8px 15px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.2s ease;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Cancel/Close button */
 .btn-cancel {
   background-color: white;
-  color: #dc3545;
-  border: 1px solid #dc3545;
+  color: $inactive;
+  border: 1px solid $inactive;
 }
 
 .btn-cancel:hover {
-  background-color: #dc3545;
-  color: white;
+  background-color: $inactive-background;
+  border: 1px solid $inactive;
 }
 
-/* Create/Submit button */
 .btn-create {
   background-color: white;
   color: $green;
@@ -216,7 +200,6 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .form-container {
     width: 95%;

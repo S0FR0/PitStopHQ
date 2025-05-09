@@ -51,19 +51,22 @@ $light-color: #f8f9fa;
 }
 
 .btn-edit {
-  background-color: palegoldenrod;
+  background-color: white;
   border: 1px solid gold;
 }
 
+.btn-edit:hover {
+  background-color: palegoldenrod;
+}
+
 .btn-delete {
-  background-color: $inactive-background;
+  background-color: white;
   color: $inactive;
   border: 1px solid $inactive;
 }
 
-.btn-add {
-  background-color: $active-background;
-  border: 1px solid $active;
+.btn-delete:hover {
+  background-color: $inactive-background;
 }
 
 .icon-vehicle {

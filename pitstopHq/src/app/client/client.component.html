@@ -8,7 +8,7 @@
     <p class="data">Secondary phone number: {{ client.secondaryPhone || '-' }}</p>
     <p class="data">Client since: {{ client.date | date:'dd.MM.yyy' }}</p>
     <div class="btns-client">
-      <button class="btn btn-edit"><mat-icon class="icon-edit" (click)="openEditClientModal()">edit</mat-icon></button>
+      <button class="btn btn-edit" (click)="openEditClientModal()"><mat-icon class="icon-edit">edit</mat-icon></button>
       <button class="btn btn-add" (click)="openAddVehicleModal()"><mat-icon class="icon-vehicle">directions_car</mat-icon></button>
       <button class="btn btn-delete" (click)="showClientDeleteConfirmation(client.id)">Delete</button>
     </div>

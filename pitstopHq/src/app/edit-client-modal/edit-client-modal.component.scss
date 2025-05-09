@@ -1,11 +1,11 @@
 $primary-color: #007bff;
 $primary-light: #acd4ff;
-$yellow: #ffe600f3;
-$yellow-light: #fff6a1f3;
-$red: #ff2e2e;
-$red-light: #f8b0b0;
-$green: #04AA6D;
-$green-light: #68af95;
+$background-color: #eeeeee;
+$active: forestgreen;
+$active-background: lightgreen;
+$inactive: crimson;
+$inactive-background: lightcoral;
+$background-hover: rgb(212, 212, 212);
 
 .modal {
   background-color: white;
@@ -57,6 +57,13 @@ select {
     margin-bottom: 30px;
 }
 
+input {
+    height: 15px;
+    padding: 5px 0px 5px 5px;
+    width: 150px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+}
 
 .invalid {
     color: red;
@@ -87,54 +94,26 @@ select {
     cursor: pointer;
 }
 
-.btn-primary {
-    background-color: $primary-color;
-    border: 2px solid $primary-color;
+.save-button {
+    background-color: white;
+    border: 1px solid $active;
+    color: $active;
 }
 
-.btn-primary:hover {
-    background-color: $primary-light;
-    border: 2px solid $primary-color;
+.save-button:hover {
+    background-color: $active-background;
+    border: 1px solid $active;
 }
 
-.btn-secondary {
-    background-color: $red;
-    border: 2px solid $red;
+.cancel-button {
+    background-color: white;
+    color: $inactive;
+    border: 1px solid $inactive;
 }
 
-.btn-secondary:hover{
-    background-color: $red-light;
-    border: 2px solid $red;
-}
-
-.btn-close {
-    width: 30px;
-}
-
-input {
-    height: 15px;
-    padding: 5px 0px 5px 5px;
-    width: 150px;
-}
-
-.btn-back {
-    background-color: $yellow;
-    border: 2px solid $yellow;
-}
-
-.btn-back:hover {
-    background-color: $yellow-light;
-    border: 2px solid $yellow;
-}
-
-.btn-success {
-    background-color: $green;
-    border: 2px solid $green;
-}
-
-.btn-success:hover {
-    background-color: $green-light;
-    border: 2px solid $green;
+.cancel-button:hover{
+    background-color: $inactive-background;
+    border: 1px solid $inactive;
 }
 
 @media (max-width: 600px) {
