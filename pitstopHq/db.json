@@ -1,171 +1,316 @@
 {
   "clients": [
     {
-      "firstName": "Marian",
-      "lastName": "Ionescu",
-      "phone": "0742123456",
-      "secondaryPhone": "0742123457",
-      "email": "maria.ionescu@example.com",
+      "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "firstName": "Alexandru",
+      "lastName": "Popescu",
+      "phone": "0723456789",
+      "secondaryPhone": "0723456780",
+      "email": "alex.popescu@example.com",
       "isActive": true,
-      "date": "2025-05-04T17:42:34.807Z",
-      "vehicleCount": 1,
-      "id": "7b16836f-5ccd-4786-9fc6-07add616c497"
+      "date": "2025-05-09T10:15:30.807Z",
+      "vehicleCount": 2
     },
     {
-      "id": "eced15fe-273e-4792-b585-24e1d2ee82e1",
-      "firstName": "Elena",
-      "lastName": "Dumitru",
-      "phone": "0744123456",
+      "id": "3b241101-e2bb-4255-8caf-4136c566a962",
+      "firstName": "Ioana",
+      "lastName": "Constantin",
+      "phone": "0745678901",
       "secondaryPhone": null,
-      "email": "elena.d@example.com",
+      "email": "ioana.c@example.com",
       "isActive": true,
-      "date": "2025-05-04T17:46:35.395Z",
+      "date": "2025-05-08T14:22:45.395Z",
+      "vehicleCount": 1
+    },
+    {
+      "id": "9a4e24c3-5420-4fc0-b9c3-4843d76158f3",
+      "firstName": "Mihai",
+      "lastName": "Stanescu",
+      "phone": "0756789012",
+      "secondaryPhone": "0756789013",
+      "email": "mihai.s@example.com",
+      "isActive": true,
+      "date": "2025-05-07T09:18:22.764Z",
+      "vehicleCount": 1
+    },
+    {
+      "id": "ff89ccc3-2943-49c9-8447-90b0cb497511",
+      "firstName": "Cristina",
+      "lastName": "Marinescu",
+      "phone": "0767890123",
+      "secondaryPhone": null,
+      "email": "cristina.m@example.com",
+      "isActive": false,
+      "date": "2025-05-06T16:45:20.123Z",
       "vehicleCount": 0
+    },
+    {
+      "id": "c0a80121-4a82-4551-b779-3440a456d8a2",
+      "firstName": "Bogdan",
+      "lastName": "Vasile",
+      "phone": "0778901234",
+      "secondaryPhone": "0778901235",
+      "email": "bogdan.v@example.com",
+      "isActive": true,
+      "date": "2025-05-05T11:30:40.987Z",
+      "vehicleCount": 3
     }
   ],
   "vehicles": [
     {
-      "id": "2e61b034-b684-41e1-9d90-0168420afffb",
-      "make": "Opel",
-      "model": "Astra",
-      "year": 2019,
-      "licensePlate": "B-789-GHI",
-      "chassisNumber": "W0L0XEP68J3123456",
-      "engineType": "Diesel",
+      "id": "dc3b4c6a-447a-41a9-97e3-5740ef5d5111",
+      "make": "Dacia",
+      "model": "Duster",
+      "year": 2020,
+      "licensePlate": "B-123-DAC",
+      "chassisNumber": "UU1HSDC4567891234",
+      "engineType": "Gas",
       "engineCapacity": 1598,
-      "horsePower": 136,
-      "kwPower": 100,
-      "km": 95000,
-      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497"
+      "horsePower": 115,
+      "kwPower": 85,
+      "km": 45000,
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     },
     {
-      "id": "6f2a3097-3a55-4996-b1a4-c849c122015d",
-      "make": "Skoda",
-      "model": "Octavia",
+      "id": "5e8b2fa8-9f5e-4093-abc2-3a912d57a6c4",
+      "make": "Renault",
+      "model": "Clio",
+      "year": 2018,
+      "licensePlate": "B-456-REN",
+      "chassisNumber": "VF15RFL0123456789",
+      "engineType": "Diesel",
+      "engineCapacity": 1461,
+      "horsePower": 90,
+      "kwPower": 66,
+      "km": 72000,
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+    },
+    {
+      "id": "a7c9d86e-6433-42cf-8215-52f76207d2c4",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2021,
+      "licensePlate": "B-789-TOY",
+      "chassisNumber": "JTDDH38E5012345678",
+      "engineType": "Hybrid",
+      "engineCapacity": 1798,
+      "horsePower": 122,
+      "kwPower": 90,
+      "km": 30000,
+      "clientId": "3b241101-e2bb-4255-8caf-4136c566a962"
+    },
+    {
+      "id": "ed0a1551-6844-43c9-9548-7e9c4928c070",
+      "make": "Ford",
+      "model": "Focus",
       "year": 2019,
-      "licensePlate": "B-404-STU",
-      "chassisNumber": "TMBJJ7NE7G0123456",
+      "licensePlate": "B-101-FOR",
+      "chassisNumber": "WF0GXXGBBG98765432",
+      "engineType": "Gas",
+      "engineCapacity": 1498,
+      "horsePower": 150,
+      "kwPower": 110,
+      "km": 55000,
+      "clientId": "9a4e24c3-5420-4fc0-b9c3-4843d76158f3"
+    },
+    {
+      "id": "25f07c34-5a71-4db0-a155-a443a1bb42de",
+      "make": "Audi",
+      "model": "A4",
+      "year": 2020,
+      "licensePlate": "B-202-AUD",
+      "chassisNumber": "WAUZZZ8K6BA123456",
       "engineType": "Diesel",
       "engineCapacity": 1968,
-      "horsePower": 150,
-      "kwPower": 110,
-      "km": 85000,
-      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1"
-    },
-    {
-      "id": "a91d4870-4a74-444d-9687-2dd63f55fe57",
-      "make": "Volkswagen",
-      "model": "Tiguan",
-      "year": 2021,
-      "licensePlate": "B-505-VWX",
-      "chassisNumber": "WVWZZZ6RZJE123456",
-      "engineType": "Gas",
-      "engineCapacity": 1984,
       "horsePower": 190,
       "kwPower": 140,
-      "km": 60000,
-      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1"
+      "km": 40000,
+      "clientId": "c0a80121-4a82-4551-b779-3440a456d8a2"
     },
     {
-      "id": "4f4c161b-6045-4e57-b7b0-cda14a23c59e",
+      "id": "b8f4c2eb-bb1d-4ca5-a5c6-937322b2b823",
+      "make": "Mercedes",
+      "model": "C-Class",
+      "year": 2022,
+      "licensePlate": "B-303-MER",
+      "chassisNumber": "WDD2050401R123456",
+      "engineType": "Hybrid",
+      "engineCapacity": 1991,
+      "horsePower": 204,
+      "kwPower": 150,
+      "km": 20000,
+      "clientId": "c0a80121-4a82-4551-b779-3440a456d8a2"
+    },
+    {
+      "id": "7d9a794c-9aeb-4c0c-a4f9-d9c2744f1b8b",
       "make": "BMW",
-      "model": "CClass",
-      "year": 2002,
-      "licensePlate": "IS-22-ELN",
-      "chassisNumber": "TMBJJ7NE8K0123456",
-      "engineType": "Gas",
-      "engineCapacity": 1980,
-      "horsePower": 150,
-      "kwPower": 110,
-      "km": 60000,
-      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497"
+      "model": "3 Series",
+      "year": 2021,
+      "licensePlate": "B-404-BMW",
+      "chassisNumber": "WBA8E9C56JK123456",
+      "engineType": "Diesel",
+      "engineCapacity": 1995,
+      "horsePower": 190,
+      "kwPower": 140,
+      "km": 35000,
+      "clientId": "c0a80121-4a82-4551-b779-3440a456d8a2"
     }
   ],
   "reservations": [
     {
-      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1",
-      "vehicleId": "a91d4870-4a74-444d-9687-2dd63f55fe57",
-      "title": "Windshild Replacement",
-      "contactMethod": "elena.d@example.com",
-      "date": "2025-05-05",
-      "time": "23:00",
-      "id": "27c29da8-27de-4197-a734-5d33b32833c7"
+      "id": "f853578c-fc0f-4e65-81b8-566c5dffa35a",
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "vehicleId": "dc3b4c6a-447a-41a9-97e3-5740ef5d5111",
+      "title": "Oil Change and Filters",
+      "contactMethod": "0723456789",
+      "date": "2025-05-20",
+      "time": "09:30"
     },
     {
-      "id": "528a72a6-d153-4792-a3e8-6902d7a7668a",
-      "clientId": "eced15fe-273e-4792-b585-24e1d2ee82e1",
-      "vehicleId": "a91d4870-4a74-444d-9687-2dd63f55fe57",
-      "title": "Annual Maintenance",
-      "contactMethod": "0744123456",
-      "date": "2025-05-15",
-      "time": "15:00"
+      "id": "9a2a70fe-5bd8-4563-b5af-cfcda4f25e2c",
+      "clientId": "3b241101-e2bb-4255-8caf-4136c566a962",
+      "vehicleId": "a7c9d86e-6433-42cf-8215-52f76207d2c4",
+      "title": "Brake Inspection",
+      "contactMethod": "ioana.c@example.com",
+      "date": "2025-05-21",
+      "time": "11:00"
     },
     {
-      "id": "ad9d4cd4-d83b-4443-b72d-b3eba55e662a",
-      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497",
-      "vehicleId": "2e61b034-b684-41e1-9d90-0168420afffb",
-      "title": "Carsfds",
-      "contactMethod": "maria.ionescu@example.com",
-      "date": "2025-05-06",
-      "time": "09:00"
+      "id": "e28d3d98-ce25-4d8d-93e1-4584070a06e8",
+      "clientId": "9a4e24c3-5420-4fc0-b9c3-4843d76158f3",
+      "vehicleId": "ed0a1551-6844-43c9-9548-7e9c4928c070",
+      "title": "AC System Service",
+      "contactMethod": "0756789012",
+      "date": "2025-05-22",
+      "time": "14:00"
     },
     {
-      "id": "3719be1c-aa59-44a3-8148-449887cedb1a",
-      "clientId": "7b16836f-5ccd-4786-9fc6-07add616c497",
-      "vehicleId": "2e61b034-b684-41e1-9d90-0168420afffb",
-      "title": "Zardsyr",
-      "contactMethod": "maria.ionescu@example.com",
-      "date": "2025-05-07",
-      "time": "11:30"
+      "id": "d67c3f85-d605-4d28-a960-3c3f2eebab3a",
+      "clientId": "c0a80121-4a82-4551-b779-3440a456d8a2",
+      "vehicleId": "25f07c34-5a71-4db0-a155-a443a1bb42de",
+      "title": "Annual Technical Inspection",
+      "contactMethod": "bogdan.v@example.com",
+      "date": "2025-05-23",
+      "time": "10:30"
+    },
+    {
+      "id": "54d454f3-c62d-444d-8d59-b8ac0e7bc252",
+      "clientId": "c0a80121-4a82-4551-b779-3440a456d8a2",
+      "vehicleId": "b8f4c2eb-bb1d-4ca5-a5c6-937322b2b823",
+      "title": "Suspension Check",
+      "contactMethod": "0778901234",
+      "date": "2025-05-24",
+      "time": "15:45"
     }
   ],
   "reservation-details": [
     {
-      "id": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
-      "reservationId": "27c29da8-27de-4197-a734-5d33b32833c7",
-      "serviceType": "Parts replacement",
-      "description": "kljh",
-      "cost": 400,
-      "duration": "30",
-      "mechanic": "Employee3",
-      "notes": "",
-      "partsNeeded": "",
-      "currentKm": 60000,
-      "vehicleConditionId": "4f6fa350-02ef-4d61-a137-3014c06908cf"
+      "id": "6db3f534-5787-4a61-b963-7c103d2f119d",
+      "reservationId": "f853578c-fc0f-4e65-81b8-566c5dffa35a",
+      "serviceType": "Scheduled maintenance",
+      "description": "Regular oil change and filter replacement",
+      "cost": 250,
+      "duration": "60",
+      "mechanic": "Employee1",
+      "notes": "Customer requested synthetic oil",
+      "partsNeeded": "Oil filter, air filter, oil",
+      "currentKm": 45000,
+      "vehicleConditionId": "29f0c8f8-dbb3-4e67-8a5e-c9e30cf3aa59"
     },
     {
-      "id": "7faacdd7-968d-41c1-8a6f-05fc8b6dbf2b",
-      "reservationId": "528a72a6-d153-4792-a3e8-6902d7a7668a",
-      "serviceType": "Parts replacement",
-      "description": "SDFSDF",
-      "cost": 50,
-      "duration": "70",
+      "id": "c1e41e42-5397-4f8c-a007-06d7bcee04ef",
+      "reservationId": "9a2a70fe-5bd8-4563-b5af-cfcda4f25e2c",
+      "serviceType": "Inspection",
+      "description": "Brake system inspection and service",
+      "cost": 150,
+      "duration": "45",
       "mechanic": "Employee2",
-      "notes": "HJFGH",
+      "notes": "Check brake fluid level",
       "partsNeeded": "",
-      "currentKm": 600000,
-      "vehicleConditionId": "d64eed43-21d3-45d5-aabc-d589bd862a26"
-    }
-  ],
-  "replaced-parts": [
-    {
-      "id": "8c210fac-001f-4978-b74a-170bca80001d",
-      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
-      "partId": "ca68da61-99d4-4348-b004-9b122a7ca068",
-      "quantity": 1
+      "currentKm": 30000,
+      "vehicleConditionId": "f7ba7a51-ef4c-4dab-b79b-18d58713a4b8"
     },
     {
-      "id": "a7f00d1f-bd18-4b7c-870f-1e199b0252c1",
-      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
-      "partId": "970c2f54-a254-4d62-8570-293505074e2d",
-      "quantity": 1
+      "id": "e91a2fa8-e14c-4da1-8173-95cc70c10309",
+      "reservationId": "e28d3d98-ce25-4d8d-93e1-4584070a06e8",
+      "serviceType": "AC Service",
+      "description": "AC system check and recharge",
+      "cost": 350,
+      "duration": "90",
+      "mechanic": "Employee3",
+      "notes": "Customer reported weak cooling",
+      "partsNeeded": "AC refrigerant",
+      "currentKm": 55000,
+      "vehicleConditionId": "9d31beb0-83ff-47e8-a5e0-5c762c4d1f7f"
+    },
+    {
+      "id": "b2cf98f1-c3c6-4e85-b0c5-d54e0a4b1c47",
+      "reservationId": "d67c3f85-d605-4d28-a960-3c3f2eebab3a",
+      "serviceType": "Technical inspection",
+      "description": "Complete vehicle inspection for annual certification",
+      "cost": 500,
+      "duration": "120",
+      "mechanic": "Employee1",
+      "notes": "Document all findings for certification",
+      "partsNeeded": "",
+      "currentKm": 40000,
+      "vehicleConditionId": "65c2da7e-66c4-4ac1-9540-c5af733a5571"
+    },
+    {
+      "id": "8d365d70-5c2f-49c0-bdad-3a162b7a23c2",
+      "reservationId": "54d454f3-c62d-444d-8d59-b8ac0e7bc252",
+      "serviceType": "Suspension check",
+      "description": "Inspection of suspension components",
+      "cost": 200,
+      "duration": "60",
+      "mechanic": "Employee2",
+      "notes": "Customer reported noise when driving over bumps",
+      "partsNeeded": "",
+      "currentKm": 20000,
+      "vehicleConditionId": "01d16a20-e64c-4a07-8c4b-8f5df0e94c51"
     }
   ],
   "vehicle-conditions": [
     {
-      "id": "4f6fa350-02ef-4d61-a137-3014c06908cf",
-      "reservationDetailsId": "bd77fcd8-1cc9-4134-88fe-4f1a26cd23c4",
-      "isDamaged": true,
+      "id": "29f0c8f8-dbb3-4e67-8a5e-c9e30cf3aa59",
+      "reservationDetailsId": "6db3f534-5787-4a61-b963-7c103d2f119d",
+      "isDamaged": false,
+      "damageDescription": "",
+      "isScratched": true,
+      "scratchDescription": "Minor scratch on rear bumper",
+      "hasMechanicalIssues": false,
+      "mechanicalIssuesDescription": "",
+      "hasElectricalIssues": false,
+      "electricalIssuesDescription": ""
+    },
+    {
+      "id": "f7ba7a51-ef4c-4dab-b79b-18d58713a4b8",
+      "reservationDetailsId": "c1e41e42-5397-4f8c-a007-06d7bcee04ef",
+      "isDamaged": false,
+      "damageDescription": "",
+      "isScratched": false,
+      "scratchDescription": "",
+      "hasMechanicalIssues": true,
+      "mechanicalIssuesDescription": "Brake pads worn beyond service limit",
+      "hasElectricalIssues": false,
+      "electricalIssuesDescription": ""
+    },
+    {
+      "id": "9d31beb0-83ff-47e8-a5e0-5c762c4d1f7f",
+      "reservationDetailsId": "e91a2fa8-e14c-4da1-8173-95cc70c10309",
+      "isDamaged": false,
+      "damageDescription": "",
+      "isScratched": false,
+      "scratchDescription": "",
+      "hasMechanicalIssues": false,
+      "mechanicalIssuesDescription": "",
+      "hasElectricalIssues": true,
+      "electricalIssuesDescription": "AC compressor electrical issue"
+    },
+    {
+      "id": "65c2da7e-66c4-4ac1-9540-c5af733a5571",
+      "reservationDetailsId": "b2cf98f1-c3c6-4e85-b0c5-d54e0a4b1c47",
+      "isDamaged": false,
       "damageDescription": "",
       "isScratched": false,
       "scratchDescription": "",
@@ -175,130 +320,120 @@
       "electricalIssuesDescription": ""
     },
     {
-      "id": "d64eed43-21d3-45d5-aabc-d589bd862a26",
-      "reservationDetailsId": "7faacdd7-968d-41c1-8a6f-05fc8b6dbf2b",
-      "isDamaged": true,
-      "damageDescription": "SDFS",
+      "id": "01d16a20-e64c-4a07-8c4b-8f5df0e94c51",
+      "reservationDetailsId": "8d365d70-5c2f-49c0-bdad-3a162b7a23c2",
+      "isDamaged": false,
+      "damageDescription": "",
       "isScratched": false,
       "scratchDescription": "",
-      "hasMechanicalIssues": false,
-      "mechanicalIssuesDescription": "",
+      "hasMechanicalIssues": true,
+      "mechanicalIssuesDescription": "Worn suspension bushings",
       "hasElectricalIssues": false,
-      "electricalIssuesDescription": "SDFS"
+      "electricalIssuesDescription": ""
+    }
+  ],
+  "replaced-parts": [
+    {
+      "id": "e8c1a55f-28d1-4d20-aec6-9c0b22903c93",
+      "reservationDetailsId": "6db3f534-5787-4a61-b963-7c103d2f119d",
+      "partId": "bfae6e8b-a8cd-48c7-9f66-30b433ea0874",
+      "quantity": 1
+    },
+    {
+      "id": "a4f5e7c2-63df-47b6-a95c-3e55be9d78d1",
+      "reservationDetailsId": "6db3f534-5787-4a61-b963-7c103d2f119d",
+      "partId": "970c2f54-a254-4d62-8570-293505074e2d",
+      "quantity": 1
+    },
+    {
+      "id": "8dab32f5-e7f1-4e3d-b29a-c887a492d125",
+      "reservationDetailsId": "6db3f534-5787-4a61-b963-7c103d2f119d",
+      "partId": "6ab25b4c-031e-4930-8567-79126e8ffdcd",
+      "quantity": 5
+    },
+    {
+      "id": "d493c6b7-1b54-4d7f-ae3c-8ec49b9f4a22",
+      "reservationDetailsId": "c1e41e42-5397-4f8c-a007-06d7bcee04ef",
+      "partId": "350d1f12-fe7a-4984-b530-f8aa65d483ab",
+      "quantity": 1
+    },
+    {
+      "id": "6c84fb90-12c4-11e1-840d-7b25c5ee775a",
+      "reservationDetailsId": "e91a2fa8-e14c-4da1-8173-95cc70c10309",
+      "partId": "c8216d27-711d-4bd0-bc96-fec736c3a4da",
+      "quantity": 1
     }
   ],
   "parts": [
     {
-      "id": "54566fe5-9d3e-4952-8ad3-8caa51c346e2",
-      "name": "Water Pump",
-      "partNumber": "11517632426",
-      "price": 450,
-      "stockQuantity": 3
-    },
-    {
-      "id": "c8216d27-711d-4bd0-bc96-fec736c3a4da",
-      "name": "Battery 12V 72Ah",
-      "partNumber": "000915105DE",
-      "price": 580,
-      "stockQuantity": 4
-    },
-    {
-      "id": "bfae6e8b-a8cd-48c7-9f66-30b433ea0874",
-      "name": "VW Oil Filter",
-      "partNumber": "06L115562B",
-      "price": 45,
-      "stockQuantity": 15
-    },
-    {
-      "id": "970c2f54-a254-4d62-8570-293505074e2d",
-      "name": "VW Air Filter",
-      "partNumber": "5Q0129620D",
+      "id": "11d1c3c7-eebf-4b26-b8a8-df20b36f33d8",
+      "name": "Ford Focus Fuel Filter",
+      "partNumber": "1S4U9155AC",
       "price": 65,
-      "stockQuantity": 12
-    },
-    {
-      "id": "6ab25b4c-031e-4930-8567-79126e8ffdcd",
-      "name": "Engine Oil 5W30",
-      "partNumber": "10024589",
-      "price": 55,
-      "stockQuantity": 30
-    },
-    {
-      "id": "ca68da61-99d4-4348-b004-9b122a7ca068",
-      "name": "Audi Rear Shock Absorber",
-      "partNumber": "8K0513036E",
-      "price": 285,
-      "stockQuantity": 4
-    },
-    {
-      "id": "350d1f12-fe7a-4984-b530-f8aa65d483ab",
-      "name": "VW Front Brake Pads",
-      "partNumber": "5Q0698151D",
-      "price": 180,
       "stockQuantity": 8
     },
     {
-      "id": "396e7505-e03b-4859-9950-b7e66bc3b375",
-      "name": "BMW Thermostat",
-      "partNumber": "11537544788",
-      "price": 120,
+      "id": "498e686c-13fe-4542-9f9f-bd4d03a7332b",
+      "name": "Toyota Corolla Brake Discs (pair)",
+      "partNumber": "4351202050",
+      "price": 195,
+      "stockQuantity": 4
+    },
+    {
+      "id": "bba7be12-44fe-4e34-a12d-cdff72a27b1b",
+      "name": "Renault Clio Clutch Kit",
+      "partNumber": "7701478031",
+      "price": 350,
+      "stockQuantity": 3
+    },
+    {
+      "id": "e4e7dbea-27a9-4c58-8d25-28bf0a9baa6c",
+      "name": "Mercedes C-Class Fuel Pump",
+      "partNumber": "A0004704994",
+      "price": 420,
+      "stockQuantity": 2
+    },
+    {
+      "id": "761f060c-82d9-4f63-af09-8c62ee8f9bcf",
+      "name": "Skoda Superb Air Mass Sensor",
+      "partNumber": "03G906461C",
+      "price": 185,
       "stockQuantity": 5
     },
     {
-      "id": "7dc6a1c3-88c4-494e-8b01-92bfdb8f011a",
-      "name": "Audi Suspension Bushings",
-      "partNumber": "8K0407181C",
+      "id": "a85e5f6b-edd2-4e97-b20e-4a7d9b3043f1",
+      "name": "Hyundai Tucson Ignition Coil",
+      "partNumber": "27301-2B100",
       "price": 95,
       "stockQuantity": 10
     },
     {
-      "id": "c8148378-1cd8-41a0-8529-b3b54d469dfc",
-      "name": "VW Rear Brake Pads",
-      "partNumber": "5Q0698451A",
-      "price": 150,
-      "stockQuantity": 7
+      "id": "cb40bfff-ddf0-4c38-9a5a-a8f37de4caee",
+      "name": "BMW 3 Series Oxygen Sensor",
+      "partNumber": "11787590713",
+      "price": 260,
+      "stockQuantity": 6
     },
     {
-      "id": "8ad80b46-7a04-450a-847d-a648cfe39e45",
-      "name": "Cabin Filter",
-      "partNumber": "5Q0819644A",
-      "price": 75,
-      "stockQuantity": 20
+      "id": "3d4a7fde-eacc-4e00-b8d3-44a6cfe1e9fc",
+      "name": "Audi A4 Control Arm",
+      "partNumber": "8E0407693K",
+      "price": 320,
+      "stockQuantity": 4
     },
     {
-      "id": "6a159dbf-bac5-4388-a8a2-c3bd37c93062",
-      "name": "VW Tiguan Windshield",
-      "partNumber": "5NA845011D",
-      "price": 850,
-      "stockQuantity": 2
-    },
-    {
-      "id": "e21d2a9b-e549-4653-a20e-9631f0f41ce6",
-      "name": "Transmission Repair Kit",
-      "partNumber": "0B5398048C",
-      "price": 620,
-      "stockQuantity": 1
-    },
-    {
-      "id": "98072046-20f2-42fa-a7d1-9c3c9d42b0d4",
-      "name": "Transmission Fluid",
-      "partNumber": "G052182A2",
-      "price": 85,
-      "stockQuantity": 8
-    },
-    {
-      "id": "6d82c50f-f0ac-4b14-9dce-2651340835e6",
-      "name": "Transmission Gaskets",
-      "partNumber": "0B5398009A",
-      "price": 125,
+      "id": "b6c8d876-6a97-4f7b-8c41-bd2f72c86c3a",
+      "name": "Dacia Duster Alternator",
+      "partNumber": "231007937R",
+      "price": 410,
       "stockQuantity": 3
     },
     {
-      "id": "ceb67afa-23a0-45e6-b332-3309605f45a8",
-      "name": "Wiper Blades Set",
-      "partNumber": "5G0998002",
-      "price": 95,
-      "stockQuantity": 15
+      "id": "d89e2c2d-f3d1-485a-9f45-c2ff5dc5c8a8",
+      "name": "Peugeot 3008 Water Pump",
+      "partNumber": "1609527580",
+      "price": 175,
+      "stockQuantity": 5
     }
   ]
 }
