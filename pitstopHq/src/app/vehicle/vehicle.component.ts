@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleWithClient } from '../models/vehicle-with-client';
 import { CommonModule } from '@angular/common';
-import { ClientService } from '../services/client.service';
 import { Vehicle } from '../models/vehicle';
 import { VehicleService } from '../services/vehicle.service';
 import { ActivatedRoute, Router } from '@angular/router';
