@@ -1,7 +1,6 @@
 {
   "clients": [
     {
-      "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
       "firstName": "Alexandru",
       "lastName": "Popescu",
       "phone": "0723456789",
@@ -9,7 +8,8 @@
       "email": "alex.popescu@example.com",
       "isActive": true,
       "date": "2025-05-09T10:15:30.807Z",
-      "vehicleCount": 2
+      "vehicleCount": 2,
+      "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     },
     {
       "id": "3b241101-e2bb-4255-8caf-4136c566a962",
@@ -72,7 +72,6 @@
       "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     },
     {
-      "id": "5e8b2fa8-9f5e-4093-abc2-3a912d57a6c4",
       "make": "Renault",
       "model": "Clio",
       "year": 2018,
@@ -83,7 +82,8 @@
       "horsePower": 90,
       "kwPower": 66,
       "km": 72000,
-      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+      "clientId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "id": "5e8b2fa8-9f5e-4093-abc2-3a912d57a6c4"
     },
     {
       "id": "a7c9d86e-6433-42cf-8215-52f76207d2c4",
