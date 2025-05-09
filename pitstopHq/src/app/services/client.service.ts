@@ -22,12 +22,9 @@ export class ClientService {
       vehicles: this.http.get<Vehicle[]>(this.vehiclesUrl)
     }).pipe(
       map(({ clients, vehicles}) => {
-        console.log(vehicles)
         return clients.map(client => {
           const vehicle = vehicles.filter( vehicle => vehicle.clientId == client.id);
-          console.log(vehicle)
           const vehicleCount = vehicle.length;
-          console.log(vehicleCount)
           return {
             ...client,
             vehicleCount: vehicleCount

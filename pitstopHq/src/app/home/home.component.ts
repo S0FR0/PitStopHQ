@@ -88,7 +88,6 @@ export class HomeComponent {
     this.reservationDetaisService.getReservationDetails().subscribe({
       next: (data) => {this.reservationDetails = data
         this.reservationDetails.map( (reservation) => {
-          console.log(reservation)
           this.revenues += reservation.cost
         })
       },
@@ -114,7 +113,6 @@ export class HomeComponent {
         this.filteredClients = [...this.clients];
         this.filterTodayReservations();
         this.applyReservationsSorting();
-        console.log(this.sortedReservations[0])
       },
       error: (error) => console.error('Error loading reservations:', error)
     })
@@ -124,11 +122,6 @@ export class HomeComponent {
     const now = new Date();
     
     const currentDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-    
-    console.log('Current date/time:', now);
-    console.log('Formatted current date:', currentDate);
-    console.log('Current hour/minute:', now.getHours(), now.getMinutes());
-    console.log('All reservations before filtering:', this.reservations);
     
     this.sortedReservations = this.reservations.filter(reservation => {
       if (reservation.date === currentDate) {
@@ -143,8 +136,6 @@ export class HomeComponent {
       }
       return false;
     });
-    
-    console.log('Filtered reservations:', this.sortedReservations);
   }
 
   applyReservationsSorting() {

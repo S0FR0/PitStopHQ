@@ -68,7 +68,6 @@ export class VehicleComponent implements OnInit {
     this.reservationDetailsService.getReservationDetailsByVehicleId(this.vehicleId).subscribe({
       next: (data) => {
         this.reservationDetails = data
-        console.log(this.reservationDetails)
       },
       error: (error) => console.error('Error loading data:', error)
     })

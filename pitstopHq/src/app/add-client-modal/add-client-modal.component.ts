@@ -133,7 +133,7 @@ export class AddClientModalComponent implements OnInit {
         this.resetForm();
       },
       error: (error) => {
-        console.log('Error saving data:', error);
+        console.error('Error saving data:', error);
       }
     });
   }

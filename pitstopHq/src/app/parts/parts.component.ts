@@ -51,10 +51,8 @@ export class PartsComponent {
   }
   
   openAddModal(partId: string) {
-    console.log('Opening modal for part:', partId);
     this.selectedPartId = partId;
     this.showAddModal = true;
-    console.log('showAddModal is now:', this.showAddModal);
   }
 
   closeModal() {
@@ -96,19 +94,6 @@ export class PartsComponent {
         }
       });
       this.deletePartId = '';
-    }
-  }
-
-  deletePart(partId: string) {
-    if(confirm('Are you sure you want to delete?')){
-      this.partService.deletePart(partId).subscribe({
-        next: () => {
-          this.loadParts();
-        },
-        error: (error) => {
-          console.error('Error deleting part', error);
-        }
-      })
     }
   }
 }

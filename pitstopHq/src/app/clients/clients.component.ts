@@ -51,7 +51,7 @@ export class ClientsComponent implements OnInit {
         this.isLoading = false;
       },
       error: (error) => {
-        console.error('Error at loading clients:', error);
+        console.error('Error loading clients:', error);
         this.isLoading = false;
       }
     });

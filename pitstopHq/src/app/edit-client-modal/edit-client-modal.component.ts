@@ -60,7 +60,7 @@ export class EditClientModalComponent implements OnInit, OnChanges {
         this.clientData = data;
         this.populateFormWithData();
       },
-      error: (error) => console.error("Client data didn't load:", error)
+      error: (error) => console.error("Error loading client data:", error)
     })
   }
 

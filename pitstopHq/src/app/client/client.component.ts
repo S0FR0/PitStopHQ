@@ -64,7 +64,7 @@ export class ClientComponent implements OnInit{
         return this.client;
       },
       error: (error) => {
-        console.error('Error at loading client:', error)
+        console.error('Erro at loading client:', error)
       }
     })
   }
@@ -83,7 +83,7 @@ export class ClientComponent implements OnInit{
         this.vehicles = data
         return this.vehicles;
       },
-      error: (error) => console.log('Error at loading vehicles:', error)
+      error: (error) => console.error('Error loading vehicles:', error)
     })
   }
 

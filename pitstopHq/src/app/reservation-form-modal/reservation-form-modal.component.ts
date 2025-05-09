@@ -104,11 +104,9 @@ export class ReservationFormModalComponent implements OnInit {
 
   loadAvailableDates(): void {
     const now = new Date();
-    console.log('Current date and time:', now);
     
     this.reservationService.getReservations().subscribe({
       next: (reservations) => {
-        console.log('Existing reservations:', reservations);
         const availabilityMap = new Map<string, Availability>();
   
         for(let i = 0; i < 14; i++) {
@@ -120,7 +118,6 @@ export class ReservationFormModalComponent implements OnInit {
           }
   
           const dateStr = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`;
-          console.log(`Processing date: ${dateStr} (day ${i})`);
           
           const slots: TimeSlot[] = [];
   
@@ -144,11 +141,9 @@ export class ReservationFormModalComponent implements OnInit {
               );
               
               if (isBooked) {
-                console.log(`Slot ${dateStr} ${timeValue} is already booked`);
               }
               
               if (isInPast) {
-                console.log(`Slot ${dateStr} ${timeValue} is in the past`);
               }
   
               const isAvailable = !isBooked && !isInPast;
@@ -173,7 +168,6 @@ export class ReservationFormModalComponent implements OnInit {
         }
   
         this.availableDates = Array.from(availabilityMap.values());
-        console.log('Available dates and slots:', this.availableDates);
       },
       error: (error) => {
         console.error('Error loading reservations:', error);

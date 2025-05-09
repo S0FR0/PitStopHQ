@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
 import { v4 as uuid } from 'uuid';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, forkJoin, of } from 'rxjs';
-import { catchError, switchMap, tap, finalize } from 'rxjs/operators';
+import { switchMap, finalize } from 'rxjs/operators';
 import { ReservationDetails } from '../models/reservation-details';
 import { VehicleCondition } from '../models/vehicle-condition';
 import { Part } from '../models/part';
@@ -13,7 +13,6 @@ import { PartService } from '../services/part.service';
 import { ReservationDetailsService } from '../services/reservation-details.service';
 import { VehicleConditionService } from '../services/vehicle-condition.service';
 import { ReplacedPartService } from '../services/replaced-parts.service';
-import { VehicleService } from '../services/vehicle.service';
 import { ReservationService } from '../services/reservation.service';
 
 @Component({
@@ -51,7 +50,6 @@ export class ReservationDetailsFormComponent implements OnInit {
     private partService: PartService,
     private reservationService: ReservationService,
     private reservationDetailsService: ReservationDetailsService,
-    private vehicleService: VehicleService,
     private vehicleConditionService: VehicleConditionService,
     private replacedPartService: ReplacedPartService
   ) {}
@@ -447,7 +445,6 @@ export class ReservationDetailsFormComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     if (this.form.invalid) {
-      console.error('Form validation failed');
       return;
     }
     
@@ -472,10 +469,6 @@ export class ReservationDetailsFormComponent implements OnInit {
     ).subscribe({
       next: () => {
         this.loadReservationDetails();
-        alert(this.detailsExist ? 
-          'Reservation details updated successfully!' : 
-          'Reservation details added successfully!'
-        );
       },
       error: (error) => {
         this.isLoading = false;

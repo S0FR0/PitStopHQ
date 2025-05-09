@@ -37,7 +37,6 @@ export class ReservationComponent implements OnInit {
     this.reservationId = this.route.snapshot.paramMap.get('reservationId')!;
     this.loadReservation();
     this.loadReservationDetails();
-    console.log(this.reservationId);
   }
 
   loadReservation(): void {
@@ -64,7 +63,7 @@ export class ReservationComponent implements OnInit {
         this.details = details;
       },
       error: (error) => {
-        console.error('Eroare la încărcarea rezervării:', error);
+        console.error('Error loading reservation:', error);
       }
     });
   }

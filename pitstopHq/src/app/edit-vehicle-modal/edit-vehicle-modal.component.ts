@@ -62,7 +62,7 @@ export class EditVehicleComponent {
         this.vehicleData = data;
         this.populateFormWithData();
       },
-      error: (error) => console.error("Vehicle data didn't load:", error)
+      error: (error) => console.error("Error loading vehicle data:", error)
     })
   }
 
